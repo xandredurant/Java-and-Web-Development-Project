@@ -1,0 +1,71 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+@namespace Java_and_Web_Development_Project.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="~/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="Java and Web Development Project.styles.css" rel="stylesheet" />
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+</head>
+<body>
+    <div id="app">
+        @RenderBody()
+
+        <hr class="horizontal-line-1" />
+
+        <div class="footerContainer">
+            <nav>
+                <div class="NavBarWrapper">
+                    <div class="centerWrapFull">
+                        <div class="NavLinkWrapper">
+                            <NavLink href="" class="link-bar-1">Home</NavLink>
+                            <div class="vlNav"></div>
+                            <NavLink href="" class="link-bar-1">Solutions</NavLink>
+                            <div class="vlNav"></div>
+                            <NavLink href="" class="link-bar-1">Testimonials</NavLink>
+                            <div class="vlNav"></div>
+                            <NavLink href="" class="link-bar-1">About</NavLink>
+                            <div class="vlNav"></div>
+                            <NavLink href="" class="link-bar-1">News</NavLink>
+                            <div class="vlNav"></div>
+                            <NavLink href="" class="link-bar-1">Contact</NavLink>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="centerWrap">
+                <hr class="horizontal-line-2" />
+            </div>
+
+            <div class="centerWrap">
+                <p class="footerDetails">
+                    426A Walter Bunton St, Pretoria, 0081, South Africa
+                    © 2024 SpaceIQ.  All rights reserved.
+                </p>
+            </div>
+
+            <div class="contactDetails">
+                <img class="emailIcon" src="Data/Email.png" alt="Icon" />
+
+                <p class="contactEmail">
+                    Example@gmail.com
+                </p>
+
+                <img class="phoneIcon" src="Data/Phone.png" alt="Icon" />
+
+                <p class="contactPhone">
+                    0123456789
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+﻿@page "/"
+@using Java_and_Web_Development_Project.Services;
+
+<PageTitle>SpaceIQ</PageTitle>
+
+<div class="HeroSection">
+    <div class="centerWrapFull">
+        <div class="leftHeroSectionWrapper">
+            <h class="Header-1">Welcome to SpaceIQ</h>
+            <p class="Paragraph-2">Dedicated to addressing your solar energy requirements. We offer solutions tailored for both large business owners and homeowners, ensuring a perfect fit for all.</p>
+
+            <div class="HeroSectionButtonWrapper">
+                <a href="" class="button-1">GET STARTED</a>
+                <a href="" class="button-2">LEARN MORE</a>
+            </div>
+        </div>
+
+        <video id="HeroVid" autoplay loop>
+            <source src="Data/HeroVid.mp4" type="audio/mp4" />
+        </video>
+    </div>
+</div>
+
+<hr class="horizontal-line-1" />
+
+<div class="centerWrapFull">
+    <h2 class="solutionsHeader">Solutions</h2>
+</div>
+
+<div class="packagesContainer">
+    @*Small*@
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="packageWrapper">
+                <h2 class="packageHeader">Package S - 5kW</h2>
+                <div class="centerWrap">
+                    <p class="packageSubHeader">Ideal for small to medium-sized homes﻿</p>
+                </div>
+                <ul class="packageDescription">
+                    <li>16 x 320W solar panels</li>
+                    <li>1 x 5kW inverter</li>
+                    <li>1 x 10kWh battery</li>
+                    <li>Roof mounting kit</li>
+                    <li>Online monitoring system</li>
+                </ul>
+                <div class="centerWrap">
+                    <a href="" class="packageButton1">BUY</a>
+                </div>
+            </div>
+        </div>
+
+        @*Medium*@
+        <div class="col-sm-3">
+            <div class="packageWrapper">
+                <h2 class="packageHeader">Package M - 8.8kW</h2>
+                <div class="centerWrap">
+                    <p class="packageSubHeader">Perfect for larger homes with higher energy demands﻿</p>
+                </div>
+                <ul class="packageDescription">
+                    <li>28 x 320W solar panels</li>
+                    <li>1 x 8kW inverter</li>
+                    <li>2 x 10kWh batteries</li>
+                    <li>Roof mounting kit</li>
+                    <li>Online monitoring system</li>
+                </ul>
+                <div class="centerWrap">
+                    <a href="" class="packageButton2">BUY</a>
+                </div>
+            </div>
+        </div>
+        @*Large*@
+        <div class="col-sm-3">
+            <div class="packageWrapper">
+                <h2 class="packageHeader">Package L - 12kW</h2>
+                <div class="centerWrap">
+                    <p class="packageSubHeader">Designed for very large homes or high energy consumption</p>
+                </div>
+                <ul class="packageDescription">
+                    <li>38 x 320W solar panels</li>
+                    <li>1 x 12kW inverter</li>
+                    <li>3 x 10kWh batteries</li>
+                    <li>Roof mounting kit</li>
+                    <li>Online monitoring system</li>
+                </ul>
+                <div class="centerWrap">
+                    <a href="" class="packageButton1">BUY</a>
+                </div>
+            </div>
+        </div>
+
+        @*Custom*@
+        <div class="col-sm-3">
+            <div class="packageWrapper">
+                <h2 class="packageHeader">Custom</h2>
+                <div class="centerWrap">
+                    <p class="packageSubHeader">Tailored solutions to meet specific household needs.﻿</p>
+                </div>
+                <ul class="packageDescription">
+                    <li>Customizable panels</li>
+                    <li>Customizable inverter</li>
+                    <li>Customizable battery</li>
+                    <li>Roof mounting kit</li>
+                    <li>Online monitoring system</li>
+                </ul>
+                <div class="centerWrap">
+                    <a href="" class="packageButton2">BUY</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<hr class="horizontal-line-1" />
+
+<div class="slidesContainer">
+    <button class="arrowButtonL">
+        <img src="Data/arrow.png" alt="Arrow" />
+    </button>
+
+    <p class="slidesText">“Thanks for sorting me out. Sometimes one forgets how 1st class service should be in SA. Because we are so used to being shafted. You guys have hit the nail on the head. I will definitely recommend your services to anyone that enquires. Thanks once again.”</p>
+
+    <button class="arrowButtonR">
+        <img src="Data/arrow.png" alt="Arrow" />
+    </button>
+</div>
+
+<div class="centerWrap">
+    <hr class="horizontal-line-2" />
+</div>
+
+<div class="centerWrap">
+    <img class="PersonLogo" src="Data/Person.png" alt="Person" />
+</div>
+
+<hr class="horizontal-line-1 hrTestimonials" />
+
+<div class="centerWrapFull">
+    <div class="businessPrinciples">
+        <div class="principlesContainer">
+            <div class="centerWrap">
+                <div class="principlesWrapper ">
+                    <img class="principlesLogos" src="Data/Sustainable.png" alt="logo" />
+                </div>
+            </div>
+
+            <div class="centerWrap">
+                <h2 class="principlesHeading">Sustainability</h2>
+            </div>
+
+            <div class="centerWrap">
+                <p class="principlesBody">We are dedicated to providing eco-friendly energy solutions that contribute to a greener planet.</p>
+            </div>
+
+        </div>
+
+        <div class="principlesContainer">
+            <div class="centerWrap">
+                <div class="principlesWrapper">
+                    <img class="principlesLogos" src="Data/Innovation.png" alt="logo" />
+                </div>
+            </div>
+
+            <div class="centerWrap">
+                <h2 class="principlesHeading">Innovation</h2>
+            </div>
+
+            <div class="centerWrap">
+                <p class="principlesBody">We embrace cutting-edge technology to deliver state-of-the-art solar products and services.</p>
+            </div>
+
+        </div>
+
+        <div class="principlesContainer">
+            <div class="centerWrap">
+                <div class="principlesWrapper">
+                    <img class="principlesLogos" src="Data/Star.png" alt="logo" />
+                </div>
+            </div>
+
+            <div class="centerWrap">
+                <h2 class="principlesHeading">Customer Satisfaction</h2>
+            </div>
+
+            <div class="centerWrap">
+                <p class="principlesBody">We prioritize our customers’ needs, ensuring they receive the best possible service and support.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="AboutSection">
+    <div class="AboutSectionWrapper">
+        <h2 class="aboutHeading">Company History</h2>
+        <p class="aboutMainInfo">Space IQ was founded with a passion for renewable energy. As a small, dedicated company, we focus on providing high-quality solar solutions and personalized service to residential and industrial clients. Our commitment to reliability and innovation has earned us a growing base of loyal customers.</p>
+
+        <h2 class="aboutSubHeading">Vision</h2>
+        <p class="aboutSubInfo">Space IQ aims to lead the solar industry by incorporating the latest technology and maintaining strong customer relationships through continuous improvement and training.</p>
+
+    </div>
+
+    <div class="picWrapper">
+        <img class="AboutPic" src="Data/AboutPic.jpg" />
+    </div>
+</div>
+
+<hr class="horizontal-line-1" />
+
+<div class="centerWrapFull">
+    <h1 class="newsSectionHeader">News</h1>
+</div>
+
+<div class="newsSection">
+    @if (feedItems == null)
+    {
+        <p>Loading news...</p>
+    }
+    else
+    {
+        @foreach (var item in feedItems)
+        {
+            <div class="newsContainer">
+                <div class="centerWrap">
+                    <h2 class="newsHeader">@item.Title</h2>
+                </div>
+                <div class="centerWrap">
+                    <p class="newsDescription">@((MarkupString)item.Description)</p>
+                </div>
+                <div class="centerWrap">
+                    <a href="@item.Link" class="newsButton">View</a>
+                </div>
+            </div>
+        }
+    }
+</div>
