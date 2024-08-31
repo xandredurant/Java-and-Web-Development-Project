@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <a href="/Manage" class="link-bar-1">Hello @UserManager.GetUserName(User)!</a>
+    <div class="vlAuth"></div>
+    <a href="/Logout" class="link-bar-1">Logout</a>
+
+}
+else
+{
+    <a href="/Login" class="link-bar-1">Login</a>
+        <div class="vlAuth"></div>
+    <a href="/Register" class="link-bar-1">Sign Up</a>
+}
+

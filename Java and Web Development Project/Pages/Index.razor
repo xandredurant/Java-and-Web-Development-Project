@@ -64,7 +64,7 @@
                     <li>Online monitoring system</li>
                 </ul>
                 <div class="centerWrap">
-                    <a href="" class="packageButton2">BUY</a>
+                    <a href="" class="packageButton1">BUY</a>
                 </div>
             </div>
         </div>
@@ -103,7 +103,7 @@
                     <li>Online monitoring system</li>
                 </ul>
                 <div class="centerWrap">
-                    <a href="" class="packageButton2">BUY</a>
+                    <a href="" class="packageButton1">BUY</a>
                 </div>
             </div>
         </div>
@@ -114,13 +114,19 @@
 <hr class="horizontal-line-1" />
 
 <div class="slidesContainer">
-    <button class="arrowButtonL">
+    <button class="arrowButtonL" onclick="changeSlides(-1)">
         <img src="Data/arrow.png" alt="Arrow" />
     </button>
-
-    <p class="slidesText">“Thanks for sorting me out. Sometimes one forgets how 1st class service should be in SA. Because we are so used to being shafted. You guys have hit the nail on the head. I will definitely recommend your services to anyone that enquires. Thanks once again.”</p>
-
-    <button class="arrowButtonR">
+    <div class="mySlides" style="display: block">
+        <p class="slidesText">“Thanks for sorting me out. Sometimes one forgets how 1st class service should be in SA. Because we are so used to being shafted. You guys have hit the nail on the head. I will definitely recommend your services to anyone that enquires. Thanks once again.”</p>
+    </div>
+    <div class="mySlides" style="display: none">
+        <p class="slidesText">
+            “My overall assessment of  SpaceIQ? Exemplary expertise, finely honed installation skills, unwavering integrity, and a delightful commitment
+            throughout the company to impeccable workmanship.”
+        </p>
+    </div>
+    <button class="arrowButtonR" onclick="changeSlides(1)">
         <img src="Data/arrow.png" alt="Arrow" />
     </button>
 </div>
@@ -207,7 +213,7 @@
 <hr class="horizontal-line-1" />
 
 <div class="centerWrapFull">
-    <h1 class="newsSectionHeader">News</h1>
+    <h2 class="newsSectionHeader">Latest News</h2>
 </div>
 
 <div class="newsSection">
@@ -233,3 +239,24 @@
         }
     }
 </div>
+
+<script>
+    let slideIndex = 1;
+
+    function changeSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+    }
+</script>

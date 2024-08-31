@@ -1,4 +1,10 @@
-﻿<nav>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@using Microsoft.AspNetCore.Components.Authorization
+
+<nav>
     <div class="NavBarWrapper">
         <div class="LogoWrapper">
             <img src="Data/Logo.png" class="logo" alt="Logo" />
@@ -20,11 +26,36 @@
 
         @*Login and Sign Up*@
         <div class="NavRightWrapper">
-            <NavLink href="" class="link-bar-1">Login</NavLink>
-            <div class="vlAuth"></div>
-            <NavLink href="" class="link-bar-1">Sign Up</NavLink>
+            @if (IsUserSignedIn())
+            {
+                <a href="/Manage" class="link-bar-1">Hello @UserName!</a>
+                <div class="vlAuth"></div>
+                <a href="/Logout" class="link-bar-1">Logout</a>
+            }
+            else
+            {
+                <a href="/Login" class="link-bar-1">Login</a>
+                <div class="vlAuth"></div>
+                <a href="/Register" class="link-bar-1">Sign Up</a>
+            }
             @*Cart Button*@
             <NavLink href="" class="link-bar-1"><img src="Data/Cart.jpg" class="shopping-cart-icon-1" alt="Cart" /></NavLink>
         </div>
     </div>
 </nav>
+
+@code {
+    private string UserName { get; set; }
+
+    private bool IsUserSignedIn()
+    {
+        var authState = AuthenticationStateProvider.GetAuthenticationStateAsync().Result;
+        var user = authState.User;
+        if (user.Identity.IsAuthenticated)
+        {
+            UserName = UserManager.GetUserName(user);
+            return true;
+        }
+        return false;
+    }
+}
