@@ -1,9 +1,7 @@
+using Java_and_Web_Development_Project.DataContext;
 using Java_and_Web_Development_Project.Services;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Java_and_Web_Development_Project.DataContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +10,11 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<RssFeedService>();
+builder.Services.AddScoped<SignInManager<IdentityUser>>();
 
-builder.Services.AddAuthentication();
+builder.Services.AddAuthentication()
+    .AddCookie(); // Or any other authentication scheme you need
+
 builder.Services.AddAuthorization();
 
 // Configure DbContext with SQL Server
@@ -21,7 +22,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Configure Identity
-builder.Services.AddDefaultIdentity<IdentityUser>()
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<AppDbContext>();
 
 var app = builder.Build();
