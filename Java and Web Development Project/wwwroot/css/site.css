@@ -5,14 +5,16 @@
 }
 
 body {
-    height:100%;
+    font-family: "Source Sans Pro";
+    height: 100%;
     width: 100%;
     text-align: center;
     background-color: #AAAAAA;
 }
 
 #app {
-    min-height:100vh;
+    font-family: "Source Sans Pro";
+    min-height: 100vh;
     width: 1200px;
     margin: 0px auto;
     text-align: left;
@@ -40,11 +42,11 @@ body {
 }
 
 .link-bar-1:hover {
-    color: orange;
+    color: darkorange;
 }
 
 .NavRightWrapper .link-bar-1:nth-child(3):hover {
-    color: orange;
+    color: darkorange;
 }
 
 .logo {
@@ -266,23 +268,23 @@ body {
     align-content: center;
 }
 
-.packageButton1:hover {
-    width: 100px;
-    height: 35px;
-    padding: 0px 10px 0px 10px;
-    background: #444444;
-    color: #FFFFFF;
-    border-color: #444444;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 24px 24px 24px 24px;
-    font-family: "Source Sans Pro";
-    font-weight: 600;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    align-content: center;
-}
+    .packageButton1:hover {
+        width: 100px;
+        height: 35px;
+        padding: 0px 10px 0px 10px;
+        background: #444444;
+        color: #FFFFFF;
+        border-color: #444444;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 24px 24px 24px 24px;
+        font-family: "Source Sans Pro";
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        align-content: center;
+    }
 
 .packagesContainer {
     display: flex;
@@ -600,9 +602,9 @@ body {
     line-height: 1.3;
 }
 
-.newsButton:hover{
-    color:orange;
-}
+    .newsButton:hover {
+        color: darkorange;
+    }
 
 /*
     Footer
@@ -622,9 +624,9 @@ body {
     color: #7A7A7A;
 }
 
-.footerContainer .link-bar-1:hover {
-    color: orange;
-}
+    .footerContainer .link-bar-1:hover {
+        color: darkorange;
+    }
 
 .contactDetails {
     display: flex;
@@ -665,3 +667,118 @@ body {
     font-size: 21px;
     text-align: center;
 }
+
+/*
+    Login and Register
+*/
+
+input{
+    margin-bottom: 10px;
+}
+
+.form-control {
+    color: black;
+    background: white;
+}
+
+    .form-control:focus {
+        color: black;
+        background: white;
+    }
+
+input, input.form-control,
+textarea, textarea.form-control {
+    box-shadow: 0 0 0 1px #7A7A7A;
+    border: none;
+}
+
+label {
+    margin-top: 5px;
+}
+
+input:focus, input.form-control:focus,
+textarea:focus, textarea.form-control:focus {
+    outline: none !important;
+    outline-width: 0 !important;
+    border: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: 0 0 0 2px #7A7A7A;
+}
+
+.Button1 {
+    display: block;
+    width: 100px;
+    height: 50px;
+    padding: 0px 10px 0px 10px;
+    background: #00000000;
+    color: #232323;
+    border-color: #444444;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    font-family: "Source Sans Pro";
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    align-content: center;
+}
+
+    .Button1:hover {
+        width: 100px;
+        height: 50px;
+        padding: 0px 10px 0px 10px;
+        background: #444444;
+        color: #FFFFFF;
+        border-color: #444444;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 5px;
+        font-family: "Source Sans Pro";
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        align-content: center;
+    }
+
+.loginLinks {
+    margin-top: 20px;
+}
+
+    .loginLinks a {
+        text-decoration: none;
+        color: #606060;
+        font-family: "Source Sans Pro";
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.42;
+    }
+
+        .loginLinks a:hover {
+            text-decoration: none;
+            color: orange;
+            font-family: "Source Sans Pro";
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.42;
+        }
+
+.identityLayout {
+    margin-top: 10%;
+}
+
+.nav-link {
+    color: #444444;
+}
+
+    .nav-link:hover {
+        color: black;
+    }
+
+    .nav-link.active {
+        color: white !important;
+        background-color: #444444 !important;
+    }
