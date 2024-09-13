@@ -4,6 +4,10 @@
     width: 100%;
 }
 
+.row {
+    width: 80%;
+}
+
 .page-container {
     display: flex;
     flex-direction: column;
@@ -25,12 +29,13 @@ body {
 #app {
     font-family: "Source Sans Pro";
     min-height: 100vh;
-    width: 1200px;
+    max-width: 1200px;
     margin: 0px auto;
     text-align: left;
     background-color: white;
 }
 /*Navbar items*/
+
 .link-bar-1 {
     width: 100px;
     height: 30px;
@@ -94,23 +99,157 @@ body {
 
 .NavLinkWrapper {
     display: flex;
-    width: 60%;
+    width: 70%;
     text-align: center;
     justify-content: center;
     text-decoration: none;
 }
 
 .NavRightWrapper {
-    width: 20%;
+    width: 30%;
     display: flex;
     text-align: center;
     justify-content: flex-end;
 }
 
 .LogoWrapper {
+    width: 100%;
+}
+.collapsedWrapper {
     width: 20%;
 }
 
+.toggleButton {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.navbarCollapsedWrapper {
+    display: flex;
+    width: 80%;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+    .navbarCollapsedWrapper {
+        width: 100%;
+    }
+
+    .LogoWrapper {
+        width: 20%;
+    }
+
+    .collapsedWrapper {
+        display: flex;
+        width: 100%;
+    }
+
+    .NavBarWrapper {
+        display: block;
+    }
+
+    .navbar-toggler-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .toggleButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background: #00000000;
+        color: #232323;
+        border-color: #444444;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 5px;
+        font-family: "Source Sans Pro";
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        align-content: center;
+    }
+
+        .toggleButton:hover {
+            background: #444444;
+            color: #FFFFFF;
+        }
+
+    .navButton {
+        display: flex;
+        justify-content: right;
+        align-content: center;
+        width: 80%;
+        padding: 20px 20px 0px 0px;
+    }
+
+    .NavLinkWrapper {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+
+        .NavLinkWrapper.collapsed {
+            display: none;
+        }
+
+    .NavRightWrapper {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+
+        .NavRightWrapper.collapsed {
+            display: none;
+        }
+
+    .vlNav {
+        display: none; /* Hide vertical lines between links on small screens */
+    }
+
+    .vlAuth {
+        display: none; /* Hide vertical lines between links on small screens */
+    }
+
+    .navbarCollapsedWrapper {
+        display: block;
+    }
+
+    .link-bar-1 {
+        margin-top: 5px;
+    }
+
+    .NavRightWrapper .link-bar-1:nth-child(4) {
+        margin-top: 5px;
+    }
+
+    .link-bar-1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 39px;
+        width: 100%;
+        border-bottom: 1px solid rgba(170, 170, 170, 0.3);
+    }
+
+    .NavRightWrapper .link-bar-1:last-child {
+        height: 39px;
+        border-bottom: none;
+    }
+
+    .shopping-cart-icon-1 {
+        width: 39px;
+        height: 39px;
+    }
+}
 /*
     Hero Section
 */
@@ -619,6 +758,16 @@ body {
 /*
     Footer
 */
+
+.horizontal-line-3 {
+    width: 56px;
+    height: 0px;
+    border-color: #EBEBEB;
+    border-width: 2px;
+    border-style: solid;
+    margin-top: 0;
+}
+
 .footerDetails {
     width: 350px;
     height: 67px;
@@ -628,6 +777,8 @@ body {
     font-size: 16px;
     line-height: 1.6;
     text-align: center;
+    margin-bottom: 0;
+    margin-top: 10px;
 }
 
 .footerContainer .link-bar-1 {

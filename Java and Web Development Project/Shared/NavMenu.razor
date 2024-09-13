@@ -6,46 +6,62 @@
 
 <nav>
     <div class="NavBarWrapper">
-        <div class="LogoWrapper">
-            <img src="Data/Logo.png" class="logo" alt="Logo" />
-        </div>
-        @*Navigation Links*@
-        <div class="NavLinkWrapper">
-            <NavLink href="" class="link-bar-1">Home</NavLink>
-            <div class="vlNav"></div>
-            <NavLink href="" class="link-bar-1">Solutions</NavLink>
-            <div class="vlNav"></div>
-            <NavLink href="" class="link-bar-1">Testimonials</NavLink>
-            <div class="vlNav"></div>
-            <NavLink href="" class="link-bar-1">About</NavLink>
-            <div class="vlNav"></div>
-            <NavLink href="" class="link-bar-1">News</NavLink>
-            <div class="vlNav"></div>
-            <NavLink href="" class="link-bar-1">Contact</NavLink>
+
+        <div class="collapsedWrapper">
+            <div class="LogoWrapper">
+                <img src="Data/Logo.png" class="logo" alt="Logo" />
+            </div>
+
+            @* Toggle Button for Small Screens *@
+            <div class="navButton">
+                <button class="toggleButton" @onclick="ToggleNavbar">
+                    <span class="navbar-toggler-icon">☰</span>
+                </button>
+            </div>
         </div>
 
-        @*Login and Sign Up*@
-        <div class="NavRightWrapper">
-            @if (IsUserSignedIn())
-            {
-                <a href="/Manage" class="link-bar-1">Hello @UserName!</a>
-                <div class="vlAuth"></div>
-                <a href="/Logout" class="link-bar-1">Logout</a>
-            }
-            else
-            {
-                <a href="/Login" class="link-bar-1">Login</a>
-                <div class="vlAuth"></div>
-                <a href="/Register" class="link-bar-1">Sign Up</a>
-            }
-            @*Cart Button*@
-            <NavLink href="/cart" class="link-bar-1"><img src="Data/Cart.jpg" class="shopping-cart-icon-1" alt="Cart" /></NavLink>
+            <div class="navbarCollapsedWrapper">
+                @*Navigation Links (hidden or shown based on screen size)*@
+                <div class="NavLinkWrapper @(isNavbarCollapsed ? "collapsed" : "")">
+                    <NavLink href="" class="link-bar-1">Home</NavLink>
+                    <div class="vlNav"></div>
+                    <NavLink href="" class="link-bar-1">Solutions</NavLink>
+                    <div class="vlNav"></div>
+                    <NavLink href="" class="link-bar-1">Testimonials</NavLink>
+                    <div class="vlNav"></div>
+                    <NavLink href="" class="link-bar-1">About</NavLink>
+                    <div class="vlNav"></div>
+                    <NavLink href="" class="link-bar-1">News</NavLink>
+                    <div class="vlNav"></div>
+                    <NavLink href="" class="link-bar-1">Contact</NavLink>
+                </div>
+
+                @*Login and Sign Up*@
+                <div class="NavRightWrapper @(isNavbarCollapsed ? "collapsed" : "")">
+                    @if (IsUserSignedIn())
+                    {
+                        <a href="/Manage" class="link-bar-1">Hello @UserName!</a>
+                        <div class="vlAuth"></div>
+                        <a href="/Logout" class="link-bar-1">Logout</a>
+                    }
+                    else
+                    {
+                        <a href="/Login" class="link-bar-1">Login</a>
+                        <div class="vlAuth"></div>
+                        <a href="/Register" class="link-bar-1">Sign Up</a>
+                    }
+                    @*Cart Button*@
+                    <NavLink href="/cart" class="link-bar-1">
+                        <img src="Data/Cart.jpg" class="shopping-cart-icon-1" alt="Cart" />
+                    </NavLink>
+                </div>
+            </div>
         </div>
-    </div>
 </nav>
 
 @code {
     private string UserName { get; set; }
+    private bool isNavbarCollapsed = true; // Toggle state for the navbar
 
     private bool IsUserSignedIn()
     {
@@ -57,5 +73,10 @@
             return true;
         }
         return false;
+    }
+
+    private void ToggleNavbar()
+    {
+        isNavbarCollapsed = !isNavbarCollapsed;
     }
 }

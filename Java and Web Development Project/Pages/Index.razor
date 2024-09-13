@@ -33,60 +33,66 @@
 <div class="packagesContainer">
     @*Small*@
     <div class="row">
-        <div class="col-sm-4">
-            <div class="packageWrapper">
-                <h2 class="packageHeader">Package S - 5kW</h2>
-                <div class="centerWrap">
-                    <p class="packageSubHeader">Ideal for small to medium-sized homes﻿</p>
-                </div>
-                <ul class="packageDescription">
-                    <li>16 x 320W solar panels</li>
-                    <li>1 x 5kW inverter</li>
-                    <li>1 x 10kWh battery</li>
-                    <li>Roof mounting kit</li>
-                    <li>Online monitoring system</li>
-                </ul>
-                <div class="centerWrap">
-                    <button @onclick='() => AddToCart(" Package S - 5kW", 5000)' class="packageButton1">BUY</button>
+        <div class="col-lg-4">
+            <div class="centerWrap">
+                <div class="packageWrapper">
+                    <h2 class="packageHeader">Package S - 5kW</h2>
+                    <div class="centerWrap">
+                        <p class="packageSubHeader">Ideal for small to medium-sized homes﻿</p>
+                    </div>
+                    <ul class="packageDescription">
+                        <li>16 x 320W solar panels</li>
+                        <li>1 x 5kW inverter</li>
+                        <li>1 x 10kWh battery</li>
+                        <li>Roof mounting kit</li>
+                        <li>Online monitoring system</li>
+                    </ul>
+                    <div class="centerWrap">
+                        <button @onclick='() => AddToCart(" Package S - 5kW", 5000)' class="packageButton1">BUY</button>
+                    </div>
                 </div>
             </div>
         </div>
 
         @*Medium*@
-        <div class="col-sm-4">
-            <div class="packageWrapper">
-                <h2 class="packageHeader">Package M - 8.8kW</h2>
-                <div class="centerWrap">
-                    <p class="packageSubHeader">Perfect for larger homes with higher energy demands﻿</p>
-                </div>
-                <ul class="packageDescription">
-                    <li>28 x 320W solar panels</li>
-                    <li>1 x 8kW inverter</li>
-                    <li>2 x 10kWh batteries</li>
-                    <li>Roof mounting kit</li>
-                    <li>Online monitoring system</li>
-                </ul>
-                <div class="centerWrap">
-                    <button @onclick='() => AddToCart("Package M - 8.8kW", 8000)' class="packageButton1">BUY</button>
+        <div class="col-lg-4">
+            <div class="centerWrap">
+                <div class="packageWrapper">
+                    <h2 class="packageHeader">Package M - 8.8kW</h2>
+                    <div class="centerWrap">
+                        <p class="packageSubHeader">Perfect for larger homes with higher energy demands﻿</p>
+                    </div>
+                    <ul class="packageDescription">
+                        <li>28 x 320W solar panels</li>
+                        <li>1 x 8kW inverter</li>
+                        <li>2 x 10kWh batteries</li>
+                        <li>Roof mounting kit</li>
+                        <li>Online monitoring system</li>
+                    </ul>
+                    <div class="centerWrap">
+                        <button @onclick='() => AddToCart("Package M - 8.8kW", 8000)' class="packageButton1">BUY</button>
+                    </div>
                 </div>
             </div>
         </div>
         @*Large*@
-        <div class="col-sm-4">
-            <div class="packageWrapper">
-                <h2 class="packageHeader">Package L - 12kW</h2>
-                <div class="centerWrap">
-                    <p class="packageSubHeader">Designed for very large homes or high energy consumption</p>
-                </div>
-                <ul class="packageDescription">
-                    <li>38 x 320W solar panels</li>
-                    <li>1 x 12kW inverter</li>
-                    <li>3 x 10kWh batteries</li>
-                    <li>Roof mounting kit</li>
-                    <li>Online monitoring system</li>
-                </ul>
-                <div class="centerWrap">
-                    <button @onclick='() => AddToCart("Package L - 12kW", 12000)' class="packageButton1">BUY</button>
+        <div class="col-lg-4">
+            <div class="centerWrap">
+                <div class="packageWrapper">
+                    <h2 class="packageHeader">Package L - 12kW</h2>
+                    <div class="centerWrap">
+                        <p class="packageSubHeader">Designed for very large homes or high energy consumption</p>
+                    </div>
+                    <ul class="packageDescription">
+                        <li>38 x 320W solar panels</li>
+                        <li>1 x 12kW inverter</li>
+                        <li>3 x 10kWh batteries</li>
+                        <li>Roof mounting kit</li>
+                        <li>Online monitoring system</li>
+                    </ul>
+                    <div class="centerWrap">
+                        <button @onclick='() => AddToCart("Package L - 12kW", 12000)' class="packageButton1">BUY</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -251,7 +257,7 @@
     }
 </script>
 
-@code{
+@code {
     private bool ShowSuccessMessage = false;
     private Timer _timer;
 
