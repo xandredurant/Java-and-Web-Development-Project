@@ -793,7 +793,9 @@ textarea:focus, textarea.form-control:focus {
         background-color: #444444 !important;
     }
 
-/* Cart Section */
+/* 
+    Cart
+*/
 
 .cartContainer {
     margin-top: 5%;
@@ -881,3 +883,20 @@ textarea:focus, textarea.form-control:focus {
         text-decoration: none;
         align-content: center;
     }
+
+/*
+    Checkout
+*/
+
+.checkoutHeader {
+    margin-top: 20%;
+    height: 50px;
+    color: #444444;
+    font-family: "Source Sans Pro";
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.28;
+    letter-spacing: -0.5px;
+    text-align: left;
+    text-decoration: none;
+}
