@@ -1,5 +1,8 @@
 ﻿@page "/"
 @using Java_and_Web_Development_Project.Services;
+@using System.Text.Json
+@inject CartService CartService
+@inject IHttpContextAccessor HttpContextAccessor
 
 <PageTitle>SpaceIQ</PageTitle>
 
@@ -44,7 +47,7 @@
                     <li>Online monitoring system</li>
                 </ul>
                 <div class="centerWrap">
-                    <a href="" class="packageButton1">BUY</a>
+                    <button @onclick='() => AddToCart(" Package S - 5kW", 5000)' class="packageButton1">BUY</button>
                 </div>
             </div>
         </div>
@@ -64,7 +67,7 @@
                     <li>Online monitoring system</li>
                 </ul>
                 <div class="centerWrap">
-                    <a href="" class="packageButton1">BUY</a>
+                    <button @onclick='() => AddToCart("Package M - 8.8kW", 8000)' class="packageButton1">BUY</button>
                 </div>
             </div>
         </div>
@@ -83,7 +86,7 @@
                     <li>Online monitoring system</li>
                 </ul>
                 <div class="centerWrap">
-                    <a href="" class="packageButton1">BUY</a>
+                    <button @onclick='() => AddToCart("Package L - 12kW", 12000)' class="packageButton1">BUY</button>
                 </div>
             </div>
         </div>
@@ -103,7 +106,7 @@
                     <li>Online monitoring system</li>
                 </ul>
                 <div class="centerWrap">
-                    <a href="" class="packageButton1">BUY</a>
+                    <button @onclick='() => AddToCart("Package L - 12kW", 12000)' class="packageButton1">BUY</button>
                 </div>
             </div>
         </div>
@@ -260,3 +263,10 @@
         slides[slideIndex - 1].style.display = "block";
     }
 </script>
+
+@code{
+    private void AddToCart(string itemName, decimal price)
+    {
+        CartService.AddToCart(itemName, price, 1);
+    }
+}

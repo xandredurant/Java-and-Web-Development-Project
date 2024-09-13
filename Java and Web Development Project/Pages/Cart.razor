@@ -1,0 +1,50 @@
+﻿@page "/cart"
+@using Java_and_Web_Development_Project.Services;
+@inject NavigationManager NavigationManager
+@inject CartService CartService
+
+
+
+<div class="cartContainer">
+    <h2>Your Cart</h2>
+    @if (CartItems != null && CartItems.Count > 0)
+    {
+        <ul>
+            @foreach (var item in CartItems)
+            {
+                <li class="cartItem">@item.Name - Quantity: @item.Quantity - Price: @item.Price</li>
+            }
+        </ul>
+        <div class="cartTotal">
+            <span>Total:</span>
+            <span>@TotalPrice</span>
+        </div>
+        <div class="centerWrapFull">
+            <button class="checkoutButton" @onclick="Checkout">Proceed to Checkout</button>
+        </div>
+    }
+    else
+    {
+        <p>Your cart is empty.</p>
+    }
+</div>
+
+@code {
+    private List<CartService.CartItem> CartItems { get; set; } = new List<CartService.CartItem>();
+    private decimal TotalPrice { get; set; }
+
+    protected override void OnInitialized()
+    {
+        // Retrieve cart items from CartService
+        CartItems = CartService.GetCartItems();
+
+        // Calculate total price
+        TotalPrice = CartItems.Sum(item => item.Price * item.Quantity);
+    }
+
+    private void Checkout()
+    {
+        // Logic to proceed to the checkout
+        NavigationManager.NavigateTo("/checkout");
+    }
+}

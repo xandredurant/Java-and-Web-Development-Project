@@ -1,5 +1,6 @@
 using Java_and_Web_Development_Project.DataContext;
 using Java_and_Web_Development_Project.Services;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<RssFeedService>();
+builder.Services.AddScoped<CartService>();
 builder.Services.AddScoped<SignInManager<IdentityUser>>();
 
 builder.Services.AddAuthentication()
@@ -33,7 +35,6 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

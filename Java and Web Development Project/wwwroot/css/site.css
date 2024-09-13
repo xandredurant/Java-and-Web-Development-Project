@@ -4,6 +4,16 @@
     width: 100%;
 }
 
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
 body {
     font-family: "Source Sans Pro";
     height: 100%;
@@ -781,4 +791,93 @@ textarea:focus, textarea.form-control:focus {
     .nav-link.active {
         color: white !important;
         background-color: #444444 !important;
+    }
+
+/* Cart Section */
+
+.cartContainer {
+    margin-top: 5%;
+    padding: 5%;
+}
+
+.cartHeader {
+    color: #444444;
+    font-family: "Source Sans Pro";
+    font-weight: 700;
+    font-size: 32px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.cartItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.cartItemName {
+    color: #444444;
+    font-family: "Source Sans Pro";
+    font-weight: 400;
+    font-size: 18px;
+    text-align: left;
+}
+
+.cartItemPrice {
+    color: #7A7A7A;
+    font-family: "Source Sans Pro";
+    font-weight: 400;
+    font-size: 16px;
+    text-align: right;
+}
+
+.cartTotal {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    font-family: "Source Sans Pro";
+    font-size: 18px;
+    color: #444444;
+}
+
+.checkoutButton {
+    display: block;
+    width: 100px;
+    height: 50px;
+    padding: 0px 10px 0px 10px;
+    background: #00000000;
+    color: #232323;
+    border-color: #444444;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    font-family: "Source Sans Pro";
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    align-content: center;
+    margin-top: 50px;
+}
+
+    .checkoutButton:hover {
+        width: 100px;
+        height: 50px;
+        padding: 0px 10px 0px 10px;
+        background: #444444;
+        color: #FFFFFF;
+        border-color: #444444;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 5px;
+        font-family: "Source Sans Pro";
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        align-content: center;
     }
