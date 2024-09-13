@@ -113,6 +113,13 @@
     </div>
 </div>
 
+@if (ShowSuccessMessage)
+{
+    <div class="alert alert-success centerWrap" role="alert">
+        Item successfully added to the cart!
+    </div>
+}
+
 
 <hr class="horizontal-line-1" />
 
@@ -265,8 +272,26 @@
 </script>
 
 @code{
+    private bool ShowSuccessMessage = false;
+    private Timer _timer;
+
     private void AddToCart(string itemName, decimal price)
     {
         CartService.AddToCart(itemName, price, 1);
+
+        // Show success message
+        ShowSuccessMessage = true;
+
+        // Start a timer to hide the message after 3 seconds
+        _timer = new Timer(HideMessage, null, 3000, Timeout.Infinite);
+    }
+
+    private void HideMessage(object state)
+    {
+        InvokeAsync(() =>
+        {
+            ShowSuccessMessage = false;
+            StateHasChanged();
+        });
     }
 }
