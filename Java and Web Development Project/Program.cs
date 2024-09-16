@@ -15,7 +15,7 @@ builder.Services.AddScoped<CartService>();
 builder.Services.AddScoped<SignInManager<IdentityUser>>();
 
 builder.Services.AddAuthentication()
-    .AddCookie(); // Or any other authentication scheme you need
+    .AddCookie();
 
 builder.Services.AddAuthorization();
 

@@ -1,10 +1,7 @@
-﻿@using Microsoft.AspNetCore.Components.Web
-@namespace Java_and_Web_Development_Project.Pages
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@using Microsoft.AspNetCore.Identity
-
+﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
+@inject IHttpContextAccessor HttpContextAccessor
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,104 +11,109 @@
     <base href="~/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
-    <link href="Java and Web Development Project.styles.css" rel="stylesheet" />
-    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="page-container">
         <nav>
             <div class="NavBarWrapper">
-                <div class="LogoWrapper">
-                    <img src="Data/Logo.png" class="logo" alt="Logo" />
-                </div>
-                @*Navigation Links*@
-                <div class="NavLinkWrapper">
-                    <a href="" class="link-bar-1">Home</a>
-                    <div class="vlNav"></div>
-                    <a href="" class="link-bar-1">Solutions</a>
-                    <div class="vlNav"></div>
-                    <a href="" class="link-bar-1">Testimonials</a>
-                    <div class="vlNav"></div>
-                    <a href="" class="link-bar-1">About</a>
-                    <div class="vlNav"></div>
-                    <a href="" class="link-bar-1">News</a>
-                    <div class="vlNav"></div>
-                    <a href="" class="link-bar-1">Contact</a>
+
+                <div class="collapsedWrapper">
+                    <div class="LogoWrapper">
+                        <img src="Data/Logo.png" class="logo" alt="Logo" />
+                    </div>
+
+                    @* Toggle Button for Small Screens *@
+                    <div class="navButton">
+                        <button class="toggleButton" onclick="toggleNavbar()">
+                            <span class="navbar-toggler-icon">☰</span>
+                        </button>
+                    </div>
                 </div>
 
-                @*Login and Sign Up*@
-                <div class="NavRightWrapper">
-                    @if (SignInManager.IsSignedIn(User))
-                    {
-                        <a href="/Manage" class="link-bar-1">Hello @UserManager.GetUserName(User)!</a>
-                        <div class="vlAuth"></div>
-                        <a href="/Logout" class="link-bar-1">Logout</a>
-                    }
-                    else
-                    {
-                        <a href="/Login" class="link-bar-1">Login</a>
-                        <div class="vlAuth"></div>
-                        <a href="/Register" class="link-bar-1">Sign Up</a>
-                    }
-                    @*Cart Button*@
-                    <a href="/cart" class="link-bar-1"><img src="Data/Cart.jpg" class="shopping-cart-icon-1" alt="Cart" /></a>
+                <div id="navbarCollapsedWrapper" class="navbarCollapsedWrapper">
+                    @*Navigation Links (hidden or shown based on screen size)*@
+                    <div class="NavLinkWrapper collapsed">
+                        <a href="/" class="link-bar-1">Home</a>
+                        <div class="vlNav"></div>
+                        <a href="/#solutions" class="link-bar-1">Solutions</a>
+                        <div class="vlNav"></div>
+                        <a href="/#testimonials" class="link-bar-1">Testimonials</a>
+                        <div class="vlNav"></div>
+                        <a href="/#about" class="link-bar-1">About</a>
+                        <div class="vlNav"></div>
+                        <a href="/#news" class="link-bar-1">News</a>
+                        <div class="vlNav"></div>
+                        <a href="/#contact" class="link-bar-1">Contact</a>
+                    </div>
+
+                    @*Login and Sign Up*@
+                    <div class="NavRightWrapper collapsed">
+                        @if (SignInManager.IsSignedIn(HttpContextAccessor.HttpContext.User))
+                        {
+                            <a href="/Manage" class="link-bar-1">Hello @UserManager.GetUserName(HttpContextAccessor.HttpContext.User)!</a>
+                            <div class="vlAuth"></div>
+                            <a href="/Logout" class="link-bar-1">Logout</a>
+                        }
+                        else
+                        {
+                            <a href="/Login" class="link-bar-1">Login</a>
+                            <div class="vlAuth"></div>
+                            <a href="/Register" class="link-bar-1">Sign Up</a>
+                        }
+                        @*Cart Button*@
+                        <a href="/cart" class="link-bar-1"><img src="Data/Cart.jpg" class="shopping-cart-icon-1" alt="Cart" /></a>
+                    </div>
                 </div>
             </div>
         </nav>
+
         <div class="identityLayout">
             @RenderBody()
         </div>
-        <div class="PositionFooter">
-            <hr class="horizontal-line-1" />
+        
+        <hr class="horizontal-line-1" />
 
-            <div class="footerContainer">
-                <nav>
-                    <div class="NavBarWrapper">
-                        <div class="centerWrapFull">
-                            <div class="NavLinkWrapper">
-                                <a href="" class="link-bar-1">Home</a>
-                                <div class="vlNav"></div>
-                                <a href="" class="link-bar-1">Solutions</a>
-                                <div class="vlNav"></div>
-                                <a href="" class="link-bar-1">Testimonials</a>
-                                <div class="vlNav"></div>
-                                <a href="" class="link-bar-1">About</a>
-                                <div class="vlNav"></div>
-                                <a href="" class="link-bar-1">News</a>
-                                <div class="vlNav"></div>
-                                <a href="" class="link-bar-1">Contact</a>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
+        <div class="footerContainer">
 
-                <div class="centerWrap">
-                    <hr class="horizontal-line-2" />
-                </div>
+        <div class="centerWrap">
+            <p class="footerDetails">
+                426A Walter Bunton St, Pretoria, 0081, South Africa
+                © 2024 SpaceIQ.  All rights reserved.
+            </p>
+        </div>
 
-                <div class="centerWrap">
-                    <p class="footerDetails">
-                        426A Walter Bunton St, Pretoria, 0081, South Africa
-                        © 2024 SpaceIQ.  All rights reserved.
-                    </p>
-                </div>
+        <div class="centerWrap">
+            <hr class="horizontal-line-3" />
+        </div>
 
-                <div class="contactDetails">
-                    <img class="emailIcon" src="Data/Email.png" alt="Icon" />
+        <div class="contactDetails">
+            <div class="emailDetails">
+                <img class="emailIcon" src="Data/Email.png" alt="Icon" />
 
-                    <p class="contactEmail">
-                        Example@gmail.com
-                    </p>
+                <p class="contactEmail">
+                    Example@gmail.com
+                </p>
+            </div>
 
-                    <img class="phoneIcon" src="Data/Phone.png" alt="Icon" />
+            <div class="phoneDetails">
+                <img class="phoneIcon" src="Data/Phone.png" alt="Icon" />
 
-                    <p class="contactPhone">
-                        0123456789
-                    </p>
-                </div>
+                <p class="contactPhone">
+                    0123456789
+                </p>
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleNavbar() {
+            const navLinks = document.querySelector('.NavLinkWrapper');
+            const navRight = document.querySelector('.NavRightWrapper');
+
+            navLinks.classList.toggle('collapsed');
+            navRight.classList.toggle('collapsed');
+        }
+    </script>
 </body>
 @RenderSection("Scripts", required: false)
 </html>

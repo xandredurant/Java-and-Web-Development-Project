@@ -1,23 +1,26 @@
+/* Wrapper for centering full-width content */
 .centerWrapFull {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
-.row {
-    width: 80%;
+/* Add smooth scrolling to page */
+html {
+    scroll-behavior: smooth;
 }
 
+/* Main page container to take up full viewport height */
 .page-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-
+/* Main content to flex and fill remaining space */
 .main-content {
     flex: 1;
 }
-
+/* Styling for body element */
 body {
     font-family: "Source Sans Pro";
     height: 100%;
@@ -25,7 +28,7 @@ body {
     text-align: center;
     background-color: #AAAAAA;
 }
-
+/* Main app container with centered content */
 #app {
     font-family: "Source Sans Pro";
     min-height: 100vh;
@@ -34,8 +37,11 @@ body {
     text-align: left;
     background-color: white;
 }
-/*Navbar items*/
+/*
+    Navbar items
+*/
 
+/* Navbar link styles */
 .link-bar-1 {
     width: 100px;
     height: 30px;
@@ -48,14 +54,17 @@ body {
     margin-top: 35px;
 }
 
+/* Special styling for 3rd navbar item */
 .NavRightWrapper .link-bar-1:nth-child(3) {
     color: #7A7A7A;
 }
 
+/* Adjust top margin for 4th navbar item */
 .NavRightWrapper .link-bar-1:nth-child(4) {
     margin-top: 25px;
 }
 
+/* Hover effect for navbar links */
 .link-bar-1:hover {
     color: darkorange;
 }
@@ -64,6 +73,7 @@ body {
     color: darkorange;
 }
 
+/* Logo container in navbar */
 .logo {
     width: 80px;
     height: 77px;
@@ -71,32 +81,38 @@ body {
     padding: 20px 0px 0px 20px;
 }
 
+/* Vertical line between navbar items */
 .vlNav {
     border-left: 2px solid #E6E6E6;
     height: 40px;
     margin-top: 25px;
 }
 
+/* Vertical line for authentication section */
 .vlAuth {
     border-left: 2px solid #000000;
     height: 30px;
     margin-top: 30px;
 }
 
+/* Navbar wrapper, using flexbox */
 .NavBarWrapper {
     display: flex;
 }
 
+/* Shopping cart icon styling */
 .shopping-cart-icon-1 {
     width: 39px;
     height: 39px;
     background: #ffffff;
 }
 
+/* Hover effect for shopping cart icon */
 .shopping-cart-icon-1:hover {
     transform: scale(110%);
 }
 
+/* Wrapper for navbar links */
 .NavLinkWrapper {
     display: flex;
     width: 70%;
@@ -105,6 +121,7 @@ body {
     text-decoration: none;
 }
 
+/* Wrapper for right side of navbar */
 .NavRightWrapper {
     width: 30%;
     display: flex;
@@ -115,10 +132,12 @@ body {
 .LogoWrapper {
     width: 100%;
 }
+
 .collapsedWrapper {
     width: 20%;
 }
 
+/* Styling for toggling button */
 .toggleButton {
     display: none;
     background: none;
@@ -132,21 +151,22 @@ body {
     width: 80%;
 }
 
-/* Media query for small screens */
+/* Responsive design: styles for small screens */
 @media (max-width: 768px) {
+    /* Full width for collapsed navbar */
     .navbarCollapsedWrapper {
         width: 100%;
     }
-
+    /* Adjust logo width on small screens */
     .LogoWrapper {
         width: 20%;
     }
-
+    /* Adjust collapsed wrapper for small screens */
     .collapsedWrapper {
         display: flex;
         width: 100%;
     }
-
+    /* Navbar in block layout for small screens */
     .NavBarWrapper {
         display: block;
     }
@@ -156,7 +176,7 @@ body {
         justify-content: center;
         align-items: center;
     }
-
+    /* Styling for toggling button */
     .toggleButton {
         display: flex;
         justify-content: center;
@@ -190,6 +210,7 @@ body {
         padding: 20px 20px 0px 0px;
     }
 
+    /* Adjust navbar layout for small screens */
     .NavLinkWrapper {
         display: flex;
         width: 100%;
@@ -211,12 +232,9 @@ body {
             display: none;
         }
 
-    .vlNav {
-        display: none; /* Hide vertical lines between links on small screens */
-    }
-
-    .vlAuth {
-        display: none; /* Hide vertical lines between links on small screens */
+    /* Hide vertical lines between links on small screens */
+    .vlNav, .vlAuth {
+        display: none;
     }
 
     .navbarCollapsedWrapper {
@@ -254,798 +272,946 @@ body {
     Hero Section
 */
 
+/* Styling for the primary button in the Hero Section */
 .button-1 {
     display: block;
     width: 148px;
     height: 42px;
     padding: 0px 10px 0px 10px;
-    background: #444444;
-    color: #FFFFFF;
-    border-color: #444444;
+    background: #444444; /* Dark gray background */
+    color: #FFFFFF; /* White text */
+    border-color: #444444; /* Matches button background */
     border-width: 2px;
     border-style: solid;
-    border-radius: 24px 24px 24px 24px;
+    border-radius: 24px; /* Rounded corners */
     font-family: "Source Sans Pro";
     font-weight: 600;
     font-size: 16px;
     text-align: center;
-    text-decoration: none;
+    text-decoration: none; /* Removes underline */
     align-content: center;
-    margin-right: 10px;
+    margin-right: 10px; /* Adds spacing to the right */
 }
 
+    /* Hover effect for button-1: slightly enlarges the button */
     .button-1:hover {
         transform: scale(107%);
-        color: #FFFFFF;
+        color: #FFFFFF; /* Ensures text remains white */
     }
 
+/* Hover effect for button-2: changes text color */
 .button-2:hover {
     transform: scale(107%);
-    color: #232323;
+    color: #232323; /* Darker text color on hover */
 }
 
+/* Styling for the secondary button in the Hero Section */
 .button-2 {
     display: block;
     width: 148px;
     height: 42px;
     padding: 0px 10px 0px 10px;
-    background: #00000000;
-    color: #232323;
-    border-color: #444444;
+    background: transparent; /* Transparent background */
+    color: #232323; /* Dark text */
+    border-color: #444444; /* Same border as button-1 */
     border-width: 2px;
     border-style: solid;
-    border-radius: 24px 24px 24px 24px;
+    border-radius: 24px; /* Same rounded corners */
     font-family: "Source Sans Pro";
     font-weight: 600;
     font-size: 16px;
     text-align: center;
-    text-decoration: none;
+    text-decoration: none; /* No underline */
     align-content: center;
 }
 
+/* Container that wraps buttons in Hero Section and aligns them horizontally */
 .HeroSectionButtonWrapper {
-    display: flex;
+    display: flex; /* Flexbox to align buttons in a row */
 }
 
+/* Video styling for Hero Section */
 #HeroVid {
-    width: 601px;
-    height: 338px;
-    background: #00000000;
-    border-radius: 8px 8px 8px 8px;
+    width: 100%; /* Full width video */
+    background: transparent; /* No background */
+    border-radius: 8px; /* Slightly rounded corners */
+    margin-right: 5%; /* Adds spacing to the right */
 }
 
+/* Adjusts the margin for larger screens */
+@media (min-width: 1000px) {
+    #HeroVid {
+        margin-right: 10%; /* Increases right margin on wider screens */
+    }
+}
+
+/* Wrapper for the left content in Hero Section */
 .leftHeroSectionWrapper {
     display: block;
-    align-content: center;
-    margin-right: 10%;
+    align-content: center; /* Centers content */
 }
 
+/* Styling for the main heading in the Hero Section */
 .Header-1 {
     height: 50px;
-    color: #444444;
+    color: #444444; /* Dark gray text */
     font-family: "Source Sans Pro";
     font-weight: 700;
-    font-size: 40px;
+    font-size: 40px; /* Large font size */
     line-height: 1.28;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.5px; /* Slightly tightens letter spacing */
     text-align: left;
-    text-decoration: none;
+    text-decoration: none; /* Removes underline */
 }
 
+/* Styling for the paragraph text in the Hero Section */
 .Paragraph-2 {
-    width: 347px;
-    height: 100px;
-    color: #7A7A7A;
+    max-width: 347px; /* Restricts the width */
+    color: #7A7A7A; /* Light gray text */
     font-family: "Source Sans Pro";
     font-weight: 400;
     font-size: 16px;
-    line-height: 1.44;
+    line-height: 1.44; /* Adds line spacing */
     text-align: left;
 }
 
+/* Main container for the Hero Section, uses flexbox for layout */
 .HeroSection {
     display: flex;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 50px; /* Adds top margin */
 }
 
+/* Horizontal line used in Hero Section */
 .horizontal-line-1 {
     margin-top: 70px;
-    height: 0px !important;
-    opacity: 30%;
-    border-color: #AAAAAA;
+    height: 0px !important; /* Ensures height remains 0 */
+    opacity: 30%; /* Adds transparency */
+    border-color: #AAAAAA; /* Light gray border */
     border-width: 1px;
     border-style: solid;
 }
 
+    /* Custom margin for the 10th child of the horizontal-line-1 class */
     .horizontal-line-1:nth-child(10) {
         margin-top: 40px;
-        border-color: #AAAAAA;
+        border-color: #AAAAAA; /* Same light gray border */
     }
+
+/* Media query for small screens (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* Adds bottom margin for left section on small screens */
+    .leftHeroSectionWrapper {
+        margin-bottom: 40px;
+    }
+
+    /* Adjusts the max width and removes right margin for the video */
+    #HeroVid {
+        max-width: 500px;
+        margin-right: 0;
+    }
+
+    /* Centers the paragraph text on small screens */
+    .Paragraph-2 {
+        text-align: center;
+    }
+
+    /* Centers the heading on small screens */
+    .Header-1 {
+        width: 100%;
+        text-align: center;
+    }
+}
 
 /*
     Solutions Section
 */
 
+/* Styling for package header in the Solutions Section */
 .packageHeader {
     width: 200px;
     height: 36px;
-    color: #000000;
+    color: #000000; /* Black text */
     font-family: "Source Sans Pro";
     font-weight: 400;
-    font-size: 24px;
-    text-align: center;
+    font-size: 24px; /* Medium font size */
+    text-align: center; /* Centers text */
 }
 
+/* Styling for subheader text in the Solutions Section */
 .packageSubHeader {
     width: 185px;
     height: 36px;
-    color: #7A7A7A;
+    color: #7A7A7A; /* Light gray text */
     font-family: "Source Sans Pro";
     font-weight: 400;
-    font-size: 14px;
-    line-height: 1.3;
+    font-size: 14px; /* Smaller font size */
+    line-height: 1.3; /* Adds some line spacing */
 }
 
+/* Styling for package description text */
 .packageDescription {
     width: 185px;
     height: 125px;
-    color: #7A7A7A;
+    color: #7A7A7A; /* Light gray text */
     font-family: "Source Sans Pro";
     font-weight: 400;
-    font-size: 14px;
-    line-height: 1.3;
-    text-align: left;
+    font-size: 14px; /* Small font size */
+    line-height: 1.3; /* Line spacing for readability */
+    text-align: left; /* Aligns text to the left */
 }
 
+/* Styling for the first package button */
 .packageButton1 {
     display: block;
     width: 100px;
     height: 35px;
     padding: 0px 10px 0px 10px;
-    background: #00000000;
-    color: #232323;
-    border-color: #444444;
+    background: transparent; /* Transparent background */
+    color: #232323; /* Dark text */
+    border-color: #444444; /* Dark gray border */
     border-width: 2px;
     border-style: solid;
-    border-radius: 24px 24px 24px 24px;
+    border-radius: 24px; /* Fully rounded corners */
     font-family: "Source Sans Pro";
     font-weight: 600;
     font-size: 16px;
     text-align: center;
-    text-decoration: none;
+    text-decoration: none; /* Removes underline */
     align-content: center;
 }
 
+    /* Hover effect for packageButton1: changes background and text color */
     .packageButton1:hover {
         width: 100px;
         height: 35px;
         padding: 0px 10px 0px 10px;
-        background: #444444;
-        color: #FFFFFF;
-        border-color: #444444;
+        background: #444444; /* Dark gray background */
+        color: #FFFFFF; /* White text */
+        border-color: #444444; /* Matches background */
         border-width: 2px;
         border-style: solid;
-        border-radius: 24px 24px 24px 24px;
+        border-radius: 24px; /* Rounded corners */
         font-family: "Source Sans Pro";
         font-weight: 600;
         font-size: 16px;
         text-align: center;
-        text-decoration: none;
+        text-decoration: none; /* No underline */
         align-content: center;
     }
 
+/* Container for package items, centers content horizontally */
 .packagesContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: center; /* Centers the items horizontally */
+    margin-top: 30px; /* Adds space above the container */
 }
 
+/* Wrapper for individual packages */
 .packageWrapper {
     width: 210px;
     height: 300px;
-    padding: 8px 8px 8px 8px;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-    background: #FFFFFF;
+    padding: 8px; /* Adds padding around the package */
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25); /* Subtle shadow for depth */
+    background: #FFFFFF; /* White background */
 }
 
+/* Styling for the header in the Solutions Section */
 .solutionsHeader {
     width: 166px;
     height: 50px;
-    color: #444444;
+    color: #444444; /* Dark gray text */
     font-family: "Source Sans Pro";
     font-weight: 700;
-    font-size: 40px;
-    line-height: 1.28;
-    letter-spacing: -0.5px;
-    text-align: center;
-    margin-top: 20px;
-    border: none;
+    font-size: 40px; /* Large font size */
+    line-height: 1.28; /* Adds line height for readability */
+    letter-spacing: -0.5px; /* Tightens letter spacing */
+    text-align: center; /* Centers the text */
+    margin-top: 20px; /* Adds margin on top */
+    border: none; /* Removes any borders */
 }
 
+/* Wrapper for center-aligning content */
 .centerWrap {
-    display: flex;
-    justify-content: center;
+    display: flex; /* Flexbox to center-align content */
+    justify-content: center; /* Centers content horizontally */
+}
+
+/* Media query for small screens (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Adds bottom margin to packageWrapper for small screens */
+    .packageWrapper {
+        margin-bottom: 40px;
+    }
+
+    /* Removes bottom margin for the last package in a row */
+    .row .col-md-4:last-child .packageWrapper {
+        margin-bottom: 0;
+    }
 }
 
 /*
     Testimonials
 */
 
+/* Styling for testimonial text slides */
 .slidesText {
-    width: 596px;
-    height: 105px;
-    color: #606060;
+    max-width: 596px; /* Maximum width for text container */
+    height: auto;
+    color: #606060; /* Gray text color */
     font-family: "Source Sans Pro";
     font-weight: 400;
-    font-size: 18px;
-    line-height: 1.42;
-    text-align: center;
-    margin: 0 50px 0 50px;
+    font-size: 18px; /* Medium font size */
+    line-height: 1.42; /* Line spacing for readability */
+    text-align: center; /* Center-aligns the text */
+    margin: 0 50px 0 50px; /* Adds horizontal margins */
 }
 
+/* Styling for the left arrow button */
 .arrowButtonL {
-    display: flex;
-    background: white;
+    display: flex; /* Flexbox for alignment */
+    background: white; /* White background */
     width: 36px;
     height: 36px;
-    border: none; /* Remove borders */
-    color: white; /* White text */
-    font-size: 16px; /* Set a font size */
-    cursor: pointer; /* Mouse pointer on hover */
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    border: none; /* No border */
+    color: white; /* White text (not visible on white background) */
+    font-size: 16px; /* Font size for button content */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Centers text in the button */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
 }
 
+    /* Styling for the image inside the left arrow button */
     .arrowButtonL img {
-        width: 36px;
-        height: 36px;
-        transform: rotate(180deg);
-        background: white;
+        width: 32px;
+        height: 32px;
+        transform: rotate(180deg); /* Rotates the arrow 180 degrees */
+        background: white; /* White background */
     }
 
+        /* Hover effect for the left arrow image: scales the image */
         .arrowButtonL img:hover {
-            transform: scale(110%) rotate(180deg);
+            transform: scale(110%) rotate(180deg); /* Scales and maintains rotation */
         }
 
+/* Styling for the right arrow button */
 .arrowButtonR {
-    display: flex;
-    background: white;
+    display: flex; /* Flexbox for alignment */
+    background: white; /* White background */
     width: 36px;
     height: 36px;
-    border: none; /* Remove borders */
+    border: none; /* No border */
     color: white; /* White text */
-    font-size: 16px; /* Set a font size */
-    cursor: pointer; /* Mouse pointer on hover */
-    justify-content: center;
-    align-items: center;
+    font-size: 16px; /* Font size for button content */
+    cursor: pointer; /* Pointer cursor on hover */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
 }
 
+    /* Styling for the image inside the right arrow button */
     .arrowButtonR img {
-        width: 36px;
-        height: 36px;
-        background: white;
+        width: 32px;
+        height: 32px;
+        background: white; /* White background */
     }
 
+        /* Hover effect for the right arrow image: scales the image */
         .arrowButtonR img:hover {
-            transform: scale(110%);
+            transform: scale(110%); /* Scales the image */
         }
 
+/* Container for the slides, centers content */
 .slidesContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Aligns items vertically */
+    margin-top: 50px; /* Adds margin above the container */
 }
 
+/* Styling for horizontal line separating sections */
 .horizontal-line-2 {
-    width: 56px;
+    width: 56px; /* Width of the line */
     height: 0px;
-    border-color: #EBEBEB;
-    border-width: 2px;
-    border-style: solid;
+    border-color: #EBEBEB; /* Light gray color */
+    border-width: 2px; /* Thickness of the line */
+    border-style: solid; /* Solid line */
 }
 
+/* Styling for person logo image */
 .PersonLogo {
     width: 48px;
-    height: 48px;
+    height: 48px; /* Sets size of the logo */
 }
 
 /*
     About Section
 */
 
-.businessPrinciples {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-}
-
+/* Wrapper for icons in the principles section */
 .principlesWrapper {
-    display: flex;
+    display: flex; /* Flexbox for horizontal and vertical alignment */
     width: 56px;
     height: 56px;
-    background: #EBEBEB;
-    border-radius: 21px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
+    background: #EBEBEB; /* Light gray background */
+    border-radius: 21px; /* Rounded corners */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    margin-top: 10px; /* Spacing above the wrapper */
 }
 
+/* Styling for icons within the principles section */
 .principlesLogos {
     width: 34px;
     height: 34px;
 }
 
-.principlesContainer {
-    margin-right: 50px;
-}
-
-    .principlesContainer:nth-child(3) {
-        margin-right: 0px;
-    }
-
+/* Heading for each principle in the About section */
 .principlesHeading {
     width: 200px;
     height: 29px;
-    color: #606060;
+    color: #606060; /* Gray text color */
     font-family: "Source Sans Pro";
     font-weight: 600;
-    font-size: 21px;
-    text-align: center;
-    margin-top: 20px;
+    font-size: 21px; /* Medium font size */
+    text-align: center; /* Center-aligns the heading */
+    margin-top: 20px; /* Space above the heading */
 }
 
+/* Body text for each principle description */
 .principlesBody {
     width: 199px;
     height: 70px;
-    opacity: 80%;
-    color: #606060;
+    opacity: 80%; /* Slightly transparent text */
+    color: #606060; /* Gray text color */
     font-family: "Source Sans Pro";
     font-weight: 400;
-    font-size: 14px;
-    line-height: 1.42;
-    text-align: center;
-    margin-top: 10px;
+    font-size: 14px; /* Small font size */
+    line-height: 1.42; /* Line spacing for readability */
+    text-align: center; /* Center-aligns the body text */
+    margin-top: 10px; /* Space above the body text */
 }
 
+/* Wrapper for the entire About section */
 .AboutSectionWrapper {
-    display: block;
-    width: 50%;
+    align-content: center; /* Centers content vertically */
 }
 
+/* Styling for the image in the About section */
 .AboutPic {
-    width: 430px;
-    height: 242px;
-    background: #F7F6F6;
-    border-radius: 15px 15px 15px 15px;
+    max-width: 100%; /* Image takes up full width */
+    background: #F7F6F6; /* Light gray background */
+    border-radius: 15px; /* Rounded corners */
+    transform: scaleX(1.0) scaleY(0.8); /* Slight vertical compression */
 }
 
+/* Wrapper for the picture in the About section */
 .picWrapper {
-    padding: 30px 0;
+    padding: 30px 0; /* Vertical padding */
+    margin-right: 5%; /* Right margin */
+    max-width: 100%; /* Max width for responsiveness */
 }
 
+/* Adjust margins on larger screens */
+@media (min-width: 1000px) {
+    .picWrapper {
+        margin-right: 10%;
+    }
+}
+
+/* Layout for the About section, centers content */
 .AboutSection {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
+    display: flex; /* Flexbox for layout */
+    justify-content: center; /* Centers content horizontally */
+    margin-top: 50px; /* Adds space above the section */
 }
 
+/* Styling for the main heading of the About section */
 .aboutHeading {
-    width: 280px;
-    height: 46px;
-    color: #444444;
+    max-width: 280px;
+    color: #444444; /* Dark gray color */
     font-family: "Source Sans Pro";
     font-weight: 600;
-    font-size: 36px;
-    line-height: 1.28;
-    text-align: left;
+    font-size: 36px; /* Large font size */
+    line-height: 1.28; /* Line spacing */
+    text-align: left; /* Left-aligns the heading */
 }
 
+/* Main text content for the About section */
 .aboutMainInfo {
-    width: 388px;
-    height: 109px;
-    opacity: 80%;
-    color: #606060;
+    max-width: 388px;
+    opacity: 80%; /* Slight transparency */
+    color: #606060; /* Gray color */
     font-family: "Source Sans Pro";
     font-weight: 400;
-    font-size: 14px;
-    line-height: 1.42;
-    text-align: left;
+    font-size: 14px; /* Small font size */
+    line-height: 1.42; /* Line spacing */
+    text-align: left; /* Left-aligns the text */
 }
 
+/* Subheading in the About section */
 .aboutSubHeading {
-    width: 80px;
-    height: 46px;
-    color: #444444;
+    max-width: 80px;
+    color: #444444; /* Dark gray color */
     font-family: "Source Sans Pro";
     font-weight: 600;
-    font-size: 30px;
-    line-height: 1.28;
-    text-align: left;
-    margin-top: 30px;
-    margin-bottom: 0px;
+    font-size: 30px; /* Medium-large font size */
+    line-height: 1.28; /* Line spacing */
+    text-align: left; /* Left-aligns the subheading */
+    margin-top: 30px; /* Space above the subheading */
+    margin-bottom: 0px; /* No space below */
 }
 
+/* Subtext content in the About section */
 .aboutSubInfo {
-    width: 388px;
-    height: 61px;
-    opacity: 80%;
-    color: #606060;
+    max-width: 388px;
+    opacity: 80%; /* Slight transparency */
+    color: #606060; /* Gray color */
     font-family: "Source Sans Pro";
     font-weight: 400;
-    font-size: 14px;
-    line-height: 1.42;
-    text-align: left;
+    font-size: 14px; /* Small font size */
+    line-height: 1.42; /* Line spacing */
+    text-align: left; /* Left-aligns the subtext */
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+
+    /* Adjusts margins for smaller screens */
+    .picWrapper {
+        margin-right: 0;
+        max-width: 500px;
+    }
+
+    /* Center-align the heading on small screens */
+    .aboutHeading {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    /* Center-align main text content on small screens */
+    .aboutMainInfo {
+        text-align: center;
+    }
+
+    /* Center-align subheading on small screens */
+    .aboutSubHeading {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    /* Center-align subtext content on small screens */
+    .aboutSubInfo {
+        text-align: center;
+    }
+
+    /* Center the content in the About section on small screens */
+    .AboutSectionWrapper {
+        justify-content: center;
+    }
 }
 
 /*
     News
 */
 
+/* Wrapper for the entire news section, centers the content */
 .newsSection {
-    display: flex;
-    justify-content: center;
+    display: flex; /* Flexbox layout for alignment */
+    justify-content: center; /* Centers content horizontally */
 }
 
+/* Container for individual news items */
 .newsContainer {
     width: 200px;
     height: 200px;
-    padding: 8px 8px 8px 8px;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-    background: #FFFFFF;
-    border-radius: 20px 20px 20px 20px;
-    margin-right: 50px;
-    margin-top: 10px;
+    padding: 8px; /* Padding around the container */
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25); /* Subtle shadow for depth */
+    background: #FFFFFF; /* White background */
+    border-radius: 20px; /* Rounded corners */
+    margin-top: 10px; /* Spacing above the container */
 }
 
-    .newsContainer:nth-child(3) {
-        margin-right: 0;
-    }
-
+/* Header for the news section */
 .newsSectionHeader {
     height: 46px;
-    color: #444444;
+    color: #444444; /* Dark gray text color */
     font-family: "Source Sans Pro";
     font-weight: 600;
-    font-size: 30px;
-    line-height: 1.28;
-    text-align: left;
-    margin-top: 20px;
+    font-size: 30px; /* Large font size */
+    line-height: 1.28; /* Line spacing for readability */
+    text-align: left; /* Aligns the header to the left */
+    margin-top: 20px; /* Adds space above the header */
 }
 
+/* Header for individual news items */
 .newsHeader {
     width: 160px;
-    color: #000000;
+    color: #000000; /* Black text color */
     font-family: "Source Sans Pro";
     font-weight: 400;
-    font-size: 16px;
-    line-height: 1.3;
-    text-align: left;
+    font-size: 16px; /* Medium font size */
+    line-height: 1.3; /* Line spacing for readability */
+    text-align: left; /* Left-aligns the text */
 }
 
-.newsDescription{
+/* Description text for news items */
+.newsDescription {
     width: 178px;
-    color: #7A7A7A;
+    color: #7A7A7A; /* Gray text color */
     font-family: "Source Sans Pro";
     font-weight: 400;
-    font-size: 14px;
-    line-height: 1.3;
-    text-align: left;
-    margin-bottom: 0 !important;
+    font-size: 14px; /* Small font size */
+    line-height: 1.3; /* Line spacing */
+    text-align: left; /* Left-aligns the text */
+    margin-bottom: 0 !important; /* Ensures no bottom margin */
 }
 
-.newsDescription P{
-    margin-bottom: 5px !important;
-}
-
-
-.newsButton {
-    color: black;
-    text-decoration: none;
-    font-family: "Source Sans Pro";
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.3;
-}
-
-    .newsButton:hover {
-        color: darkorange;
+    /* Override for paragraph margin within the news description */
+    .newsDescription P {
+        margin-bottom: 5px !important; /* Sets consistent spacing between paragraphs */
     }
 
-/*
-    Footer
+/* Button link for news items */
+.newsButton {
+    color: black; /* Black text color */
+    text-decoration: none; /* Removes underline */
+    font-family: "Source Sans Pro";
+    font-weight: 400;
+    font-size: 18px; /* Medium font size */
+    line-height: 1.3; /* Line spacing */
+}
+
+    /* Hover effect for the news button */
+    .newsButton:hover {
+        color: darkorange; /* Changes text color to dark orange on hover */
+    }
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+
+    /* Adds spacing below news containers on smaller screens */
+    .newsContainer {
+        margin-bottom: 20px;
+    }
+
+    /* Removes bottom margin for the last container in small screens */
+    .row .col-md-4.centerWrap:last-child .newsContainer {
+        margin-bottom: 0px;
+    }
+}
+
+/* 
+    Footer Section
 */
 
+/* Horizontal line in the footer */
 .horizontal-line-3 {
-    width: 56px;
-    height: 0px;
-    border-color: #EBEBEB;
-    border-width: 2px;
-    border-style: solid;
-    margin-top: 0;
+    width: 56px; /* Width of the horizontal line */
+    height: 0px; /* Height is 0 to make it a line */
+    border-color: #EBEBEB; /* Color of the border line */
+    border-width: 2px; /* Thickness of the border line */
+    border-style: solid; /* Style of the border line */
+    margin-top: 0; /* No margin on top */
 }
 
+/* Footer details text styling */
 .footerDetails {
-    width: 350px;
-    height: 67px;
-    color: #AAAAAA;
-    font-family: "Source Sans Pro";
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: center;
-    margin-bottom: 0;
-    margin-top: 10px;
+    width: 350px; /* Fixed width for the footer text container */
+    height: 67px; /* Fixed height for the footer text container */
+    color: #AAAAAA; /* Text color */
+    font-family: "Source Sans Pro"; /* Font family for the text */
+    font-weight: 400; /* Font weight */
+    font-size: 16px; /* Font size */
+    line-height: 1.6; /* Line height for readability */
+    text-align: center; /* Center-aligns the text */
+    margin-bottom: 0; /* No margin at the bottom */
+    margin-top: 10px; /* Margin on top */
 }
 
+/* Link bar styling in the footer */
 .footerContainer .link-bar-1 {
-    color: #7A7A7A;
+    color: #7A7A7A; /* Color of the link */
 }
 
+    /* Hover effect for link bar */
     .footerContainer .link-bar-1:hover {
-        color: darkorange;
+        color: darkorange; /* Color change on hover */
     }
 
+/* Container for contact details, centers content */
 .contactDetails {
-    display: flex;
-    justify-content: center;
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Centers items horizontally */
 }
 
+/* Icon for email */
 .emailIcon {
-    width: 29px;
-    height: 29px;
-    background: white;
-    margin-right: 10px;
+    width: 29px; /* Width of the email icon */
+    height: 29px; /* Height of the email icon */
+    background: white; /* Background color of the icon */
+    margin-right: 10px; /* Spacing to the right of the icon */
 }
 
+/* Icon for phone, rotated */
 .phoneIcon {
-    transform: rotate(-90deg);
-    width: 29px;
-    height: 29px;
-    background: white;
-    margin-right: 10px;
+    transform: rotate(-90deg); /* Rotates the phone icon */
+    width: 29px; /* Width of the phone icon */
+    height: 29px; /* Height of the phone icon */
+    background: white; /* Background color of the icon */
+    margin-right: 10px; /* Spacing to the right of the icon */
 }
 
+/* Contact email styling */
 .contactEmail {
-    width: 185px;
-    height: 29px;
-    color: #606060;
-    font-family: "Source Sans Pro";
-    font-weight: 400;
-    font-size: 21px;
-    margin-right: 20px;
+    width: 185px; /* Fixed width for the email text */
+    height: 29px; /* Fixed height for the email text */
+    color: #606060; /* Text color */
+    font-family: "Source Sans Pro"; /* Font family */
+    font-weight: 400; /* Font weight */
+    font-size: 21px; /* Font size */
+    margin-right: 20px; /* Spacing to the right of the email text */
 }
 
+/* Contact phone styling */
 .contactPhone {
-    width: 104px;
-    height: 29px;
-    color: #606060;
-    font-family: "Source Sans Pro";
-    font-weight: 400;
-    font-size: 21px;
-    text-align: center;
+    width: 104px; /* Fixed width for the phone text */
+    height: 29px; /* Fixed height for the phone text */
+    color: #606060; /* Text color */
+    font-family: "Source Sans Pro"; /* Font family */
+    font-weight: 400; /* Font weight */
+    font-size: 21px; /* Font size */
+    text-align: center; /* Center-aligns the text */
+}
+
+/* Flexbox layout for email details */
+.emailDetails {
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Centers items horizontally */
+}
+
+/* Flexbox layout for phone details */
+.phoneDetails {
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Centers items horizontally */
+}
+
+/* Media query for small screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+    .contactDetails {
+        display: block; /* Changes layout to block for smaller screens */
+        justify-content: center; /* Centers content */
+    }
+
+    .contactEmail {
+        margin-right: 0; /* Removes right margin on small screens */
+    }
 }
 
 /*
     Login and Register
 */
 
-input{
+/* Adds spacing below input fields */
+input {
     margin-bottom: 10px;
 }
 
+/* General styling for form controls */
 .form-control {
-    color: black;
-    background: white;
+    color: black; /* Text color */
+    background: white; /* Background color */
 }
 
+    /* Focus state styling for form controls */
     .form-control:focus {
         color: black;
         background: white;
     }
 
+/* Styling for input and textarea elements, adds a subtle shadow and removes borders */
 input, input.form-control,
 textarea, textarea.form-control {
-    box-shadow: 0 0 0 1px #7A7A7A;
-    border: none;
+    box-shadow: 0 0 0 1px #7A7A7A; /* Gray border */
+    border: none; /* Removes default border */
 }
 
+/* Adds margin above labels */
 label {
     margin-top: 5px;
 }
 
+/* Focus state styling for input and textarea elements */
 input:focus, input.form-control:focus,
 textarea:focus, textarea.form-control:focus {
-    outline: none !important;
-    outline-width: 0 !important;
-    border: none;
-    box-shadow: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: 0 0 0 2px #7A7A7A;
+    outline: none !important; /* Removes default focus outline */
+    border: none; /* No border */
+    box-shadow: none; /* Removes box-shadow */
+    -moz-box-shadow: none; /* Removes Mozilla-specific box-shadow */
+    -webkit-box-shadow: none; /* Removes WebKit-specific box-shadow */
+    box-shadow: 0 0 0 2px #7A7A7A; /* Adds a thicker gray border on focus */
 }
 
+/* Styling for buttons */
 .Button1 {
-    display: block;
-    width: 100px;
-    height: 50px;
-    padding: 0px 10px 0px 10px;
-    background: #00000000;
-    color: #232323;
-    border-color: #444444;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 5px;
-    font-family: "Source Sans Pro";
-    font-weight: 600;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    align-content: center;
+    display: block; /* Displays button as block element */
+    width: 100px; /* Button width */
+    height: 50px; /* Button height */
+    padding: 0px 10px; /* Padding inside the button */
+    background: transparent; /* Transparent background */
+    color: #232323; /* Text color */
+    border-color: #444444; /* Border color */
+    border-width: 2px; /* Border width */
+    border-style: solid; /* Solid border */
+    border-radius: 5px; /* Rounded corners */
+    font-family: "Source Sans Pro"; /* Font style */
+    font-weight: 600; /* Bold font */
+    font-size: 16px; /* Font size */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Removes underline */
+    align-content: center; /* Centers content inside */
 }
 
+    /* Hover effect for the buttons */
     .Button1:hover {
-        width: 100px;
-        height: 50px;
-        padding: 0px 10px 0px 10px;
-        background: #444444;
-        color: #FFFFFF;
-        border-color: #444444;
-        border-width: 2px;
-        border-style: solid;
-        border-radius: 5px;
-        font-family: "Source Sans Pro";
-        font-weight: 600;
-        font-size: 16px;
-        text-align: center;
-        text-decoration: none;
-        align-content: center;
+        background: #444444; /* Dark background on hover */
+        color: #FFFFFF; /* White text on hover */
+        border-color: #444444; /* Dark border on hover */
     }
 
+/* Styling for login-related links */
 .loginLinks {
-    margin-top: 20px;
+    margin-top: 20px; /* Spacing above the links */
 }
 
+    /* Styling for anchor tags within login links */
     .loginLinks a {
-        text-decoration: none;
-        color: #606060;
-        font-family: "Source Sans Pro";
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 1.42;
+        text-decoration: none; /* Removes underline */
+        color: #606060; /* Gray text */
+        font-family: "Source Sans Pro"; /* Font style */
+        font-weight: 400; /* Normal font weight */
+        font-size: 18px; /* Font size */
+        line-height: 1.42; /* Line spacing */
     }
 
+        /* Hover effect for anchor tags */
         .loginLinks a:hover {
-            text-decoration: none;
-            color: orange;
-            font-family: "Source Sans Pro";
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 1.42;
+            color: orange; /* Changes color to orange on hover */
         }
 
+/* Layout for identity-related elements */
 .identityLayout {
-    margin-top: 10%;
+    margin-top: 10%; /* Adds margin at the top */
+    flex: 1; /* Flex property for layout */
 }
 
+/* Styling for navigation links */
 .nav-link {
-    color: #444444;
+    color: #444444; /* Dark gray color */
 }
 
+    /* Hover effect for navigation links */
     .nav-link:hover {
-        color: black;
+        color: black; /* Changes to black on hover */
     }
 
+    /* Active state styling for navigation links */
     .nav-link.active {
-        color: white !important;
-        background-color: #444444 !important;
+        color: white !important; /* White text for active links */
+        background-color: #444444 !important; /* Dark background for active links */
     }
 
-/* 
+/*
     Cart
 */
 
+/* Container for the cart section, adding margins and padding */
 .cartContainer {
     margin-top: 5%;
     padding: 5%;
 }
 
+/* Header styling for the cart, using bold font and left alignment */
 .cartHeader {
-    color: #444444;
     font-family: "Source Sans Pro";
     font-weight: 700;
     font-size: 32px;
+    color: #444444;
     text-align: left;
     margin-bottom: 20px;
 }
 
+/* Layout for each cart item, aligning content and adding a bottom border */
 .cartItem {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
     padding: 10px 0;
     border-bottom: 1px solid #E6E6E6;
 }
 
+/* Name of the cart item, left-aligned */
 .cartItemName {
-    color: #444444;
     font-family: "Source Sans Pro";
     font-weight: 400;
     font-size: 18px;
+    color: #444444;
     text-align: left;
 }
 
+/* Price of the cart item, right-aligned and in a lighter gray */
 .cartItemPrice {
-    color: #7A7A7A;
     font-family: "Source Sans Pro";
     font-weight: 400;
     font-size: 16px;
+    color: #7A7A7A;
     text-align: right;
 }
 
+/* Layout for displaying total price, with space between elements */
 .cartTotal {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    margin-top: 20px;
     font-family: "Source Sans Pro";
     font-size: 18px;
     color: #444444;
+    margin-top: 20px;
 }
 
+/* Styling for the checkout button, with hover effects changing background and text color */
 .checkoutButton {
     display: block;
     width: 100px;
     height: 50px;
-    padding: 0px 10px 0px 10px;
-    background: #00000000;
+    background: transparent;
     color: #232323;
-    border-color: #444444;
-    border-width: 2px;
-    border-style: solid;
+    border: 2px solid #444444;
     border-radius: 5px;
     font-family: "Source Sans Pro";
     font-weight: 600;
     font-size: 16px;
     text-align: center;
-    text-decoration: none;
-    align-content: center;
     margin-top: 50px;
 }
 
+    /* Hover state for the checkout button, darkening the background and changing text to white */
     .checkoutButton:hover {
-        width: 100px;
-        height: 50px;
-        padding: 0px 10px 0px 10px;
         background: #444444;
         color: #FFFFFF;
-        border-color: #444444;
-        border-width: 2px;
-        border-style: solid;
-        border-radius: 5px;
-        font-family: "Source Sans Pro";
-        font-weight: 600;
-        font-size: 16px;
-        text-align: center;
-        text-decoration: none;
-        align-content: center;
     }
 
 /*
     Checkout
 */
 
+/* Styles for the checkout page header, adding top margin, setting font properties, and left-aligning text */
 .checkoutHeader {
     margin-top: 20%;
     height: 50px;
-    color: #444444;
     font-family: "Source Sans Pro";
     font-weight: 700;
     font-size: 40px;
+    color: #444444;
     line-height: 1.28;
     letter-spacing: -0.5px;
     text-align: left;

@@ -15,45 +15,33 @@ namespace Java_and_Web_Development_Project.Services
             _httpClient = httpClient;
         }
 
+        // Fetches and parses RSS feed items from a given URL
         public async Task<List<RssFeedItem>> GetNewsAsync(string feedUrl)
         {
+            // Get the RSS feed as a string
             var response = await _httpClient.GetStringAsync(feedUrl);
             var document = XDocument.Parse(response);
 
             var items = new List<RssFeedItem>();
-            if (document.Descendants().Count() < 3) {
-                foreach (var element in document.Descendants("item"))
-                {
-                    var title = element.Element("title")?.Value.Substring(0,30) + "...";
-                    var description = element.Element("description")?.Value.Substring(0, 150) + "...";
-                    var link = element.Element("link")?.Value;
 
-                    items.Add(new RssFeedItem
-                    {
-                        Title = title,
-                        Description = description,
-                        Link = link
-                    });
-                }
-            }
-            else
+            // Retrieve RSS feed items
+            var rssItems = document.Descendants("item").ToList();
+            var itemCount = Math.Min(rssItems.Count, 3); // Limit to 3 items
+
+            for (int i = 0; i < itemCount; i++)
             {
-                for( int k = 0; k < 3;  k++)
-                {
-                    var element = document.Descendants("item").ToArray()[k];
-                    var title = element.Element("title")?.Value.Substring(0, 30) + "...";
-                    var description = element.Element("description")?.Value.Substring(0, 150) + "...";
-                    var link = element.Element("link")?.Value;
+                var element = rssItems[i];
+                var title = element.Element("title")?.Value?.Substring(0, Math.Min(30, element.Element("title")?.Value.Length ?? 0)) + "...";
+                var description = element.Element("description")?.Value?.Substring(0, Math.Min(150, element.Element("description")?.Value.Length ?? 0)) + "...";
+                var link = element.Element("link")?.Value;
 
-                    items.Add(new RssFeedItem
-                    {
-                        Title = title,
-                        Description = description,
-                        Link = link
-                    });
-                }
+                items.Add(new RssFeedItem
+                {
+                    Title = title,
+                    Description = description,
+                    Link = link
+                });
             }
-            
 
             return items;
         }

@@ -1,0 +1,57 @@
+﻿@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+@implements IDisposable
+
+@code {
+    // Subscribe to location change events when the component is initialized
+    protected override void OnInitialized()
+    {
+        NavigationManager.LocationChanged += OnLocationChanged;
+    }
+
+    // Run after the component has rendered
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        // Wait a short time to ensure the entire page (including footer) is rendered
+        await Task.Delay(1000);
+        await ScrollToFragment();
+    }
+
+    // Unsubscribe from location change events when the component is disposed
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+
+    // Handle location change events (e.g., when navigating to a different URL)
+    private async void OnLocationChanged(object sender, LocationChangedEventArgs e)
+    {
+        await ScrollToFragment();
+    }
+
+    // Scroll to the element specified by the fragment in the URL
+    private async Task ScrollToFragment()
+    {
+        var uri = new Uri(NavigationManager.Uri, UriKind.Absolute);
+        var fragment = uri.Fragment;
+
+        // Check if the URL contains a fragment (e.g., #contact)
+        if (fragment.StartsWith('#'))
+        {
+            var elementId = fragment.Substring(1);
+
+            // Handle potential text fragments (e.g., #element:~:text=foo)
+            var index = elementId.IndexOf(":~:", StringComparison.Ordinal);
+            if (index > 0)
+            {
+                elementId = elementId.Substring(0, index);
+            }
+
+            // Scroll to the element if the ID is valid
+            if (!string.IsNullOrEmpty(elementId))
+            {
+                await JSRuntime.InvokeVoidAsync("BlazorScrollToId", elementId);
+            }
+        }
+    }
+}

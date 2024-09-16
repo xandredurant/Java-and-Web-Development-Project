@@ -1,39 +1,52 @@
 ﻿@page "/"
-@using Java_and_Web_Development_Project.Services;
+@using Java_and_Web_Development_Project.Services
 @using System.Text.Json
 @inject CartService CartService
 @inject IHttpContextAccessor HttpContextAccessor
 
 <PageTitle>SpaceIQ</PageTitle>
 
-<div class="HeroSection">
-    <div class="centerWrapFull">
-        <div class="leftHeroSectionWrapper">
-            <h class="Header-1">Welcome to SpaceIQ</h>
-            <p class="Paragraph-2">Dedicated to addressing your solar energy requirements. We offer solutions tailored for both large business owners and homeowners, ensuring a perfect fit for all.</p>
+<!-- Hero Section: Main introduction and call-to-action -->
+<div class="HeroSection centerWrap">
+    <div class="row" style="width: 100%;">
+        <!-- Left side: Welcome message and action buttons -->
+        <div class="col-md-6 centerWrap">
+            <div class="leftHeroSectionWrapper">
+                <h class="Header-1">Welcome to SpaceIQ</h>
+                <p class="Paragraph-2">
+                    Dedicated to addressing your solar energy requirements. We offer solutions tailored for both large business owners and homeowners, ensuring a perfect fit for all.
+                </p>
 
-            <div class="HeroSectionButtonWrapper">
-                <a href="" class="button-1">GET STARTED</a>
-                <a href="" class="button-2">LEARN MORE</a>
+                <div class="HeroSectionButtonWrapper">
+                    <!-- Get Started button link -->
+                    <a href="#solutions" class="button-1">GET STARTED</a>
+                    <!-- Learn More button link -->
+                    <a href="#about" class="button-2">LEARN MORE</a>
+                </div>
             </div>
         </div>
 
-        <video id="HeroVid" autoplay loop>
-            <source src="Data/HeroVid.mp4" type="audio/mp4" />
-        </video>
+        <!-- Right side: Promotional video -->
+        <div class="col-md-6 centerWrap">
+            <video id="HeroVid" autoplay loop>
+                <source src="Data/HeroVid.mp4" type="audio/mp4" />
+            </video>
+        </div>
     </div>
 </div>
 
-<hr class="horizontal-line-1" />
+<hr class="horizontal-line-1" id="solutions" />
 
+<!-- Solutions Section: Title for the solutions offered -->
 <div class="centerWrapFull">
     <h2 class="solutionsHeader">Solutions</h2>
 </div>
 
+<!-- Packages Container: Different solar package options -->
 <div class="packagesContainer">
-    @*Small*@
-    <div class="row">
-        <div class="col-lg-4">
+    <div class="row" style="width: 100%;">
+        <!-- Small Package -->
+        <div class="col-md-4">
             <div class="centerWrap">
                 <div class="packageWrapper">
                     <h2 class="packageHeader">Package S - 5kW</h2>
@@ -48,14 +61,15 @@
                         <li>Online monitoring system</li>
                     </ul>
                     <div class="centerWrap">
-                        <button @onclick='() => AddToCart(" Package S - 5kW", 5000)' class="packageButton1">BUY</button>
+                        <!-- Button to add the package to the cart -->
+                        <button @onclick='() => AddToCart("Package S - 5kW", 5000)' class="packageButton1">BUY</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        @*Medium*@
-        <div class="col-lg-4">
+        <!-- Medium Package -->
+        <div class="col-md-4">
             <div class="centerWrap">
                 <div class="packageWrapper">
                     <h2 class="packageHeader">Package M - 8.8kW</h2>
@@ -70,13 +84,15 @@
                         <li>Online monitoring system</li>
                     </ul>
                     <div class="centerWrap">
+                        <!-- Button to add the package to the cart -->
                         <button @onclick='() => AddToCart("Package M - 8.8kW", 8000)' class="packageButton1">BUY</button>
                     </div>
                 </div>
             </div>
         </div>
-        @*Large*@
-        <div class="col-lg-4">
+
+        <!-- Large Package -->
+        <div class="col-md-4">
             <div class="centerWrap">
                 <div class="packageWrapper">
                     <h2 class="packageHeader">Package L - 12kW</h2>
@@ -91,6 +107,7 @@
                         <li>Online monitoring system</li>
                     </ul>
                     <div class="centerWrap">
+                        <!-- Button to add the package to the cart -->
                         <button @onclick='() => AddToCart("Package L - 12kW", 12000)' class="packageButton1">BUY</button>
                     </div>
                 </div>
@@ -99,6 +116,7 @@
     </div>
 </div>
 
+<!-- Success Message: Displayed when an item is added to the cart -->
 @if (ShowSuccessMessage)
 {
     <div class="alert alert-success centerWrap" role="alert">
@@ -106,108 +124,132 @@
     </div>
 }
 
+<hr class="horizontal-line-1" id="testimonials" />
 
-<hr class="horizontal-line-1" />
-
+<!-- Testimonials Slider: Display customer feedback -->
 <div class="slidesContainer">
+    <!-- Left arrow button to navigate slides -->
     <button class="arrowButtonL" onclick="changeSlides(-1)">
         <img src="Data/arrow.png" alt="Arrow" />
     </button>
+
+    <!-- Slide 1 -->
     <div class="mySlides" style="display: block">
-        <p class="slidesText">“Thanks for sorting me out. Sometimes one forgets how 1st class service should be in SA. Because we are so used to being shafted. You guys have hit the nail on the head. I will definitely recommend your services to anyone that enquires. Thanks once again.”</p>
-    </div>
-    <div class="mySlides" style="display: none">
         <p class="slidesText">
-            “My overall assessment of  SpaceIQ? Exemplary expertise, finely honed installation skills, unwavering integrity, and a delightful commitment
-            throughout the company to impeccable workmanship.”
+            “Thanks for sorting me out. Sometimes one forgets how 1st class service should be in SA. Because we are so used to being shafted. You guys have hit the nail on the head. I will definitely recommend your services to anyone that enquires. Thanks once again.”
         </p>
     </div>
+
+    <!-- Slide 2 -->
+    <div class="mySlides" style="display: none">
+        <p class="slidesText">
+            “My overall assessment of SpaceIQ? Exemplary expertise, finely honed installation skills, unwavering integrity, and a delightful commitment throughout the company to impeccable workmanship.”
+        </p>
+    </div>
+
+    <!-- Right arrow button to navigate slides -->
     <button class="arrowButtonR" onclick="changeSlides(1)">
         <img src="Data/arrow.png" alt="Arrow" />
     </button>
 </div>
 
+
 <div class="centerWrap">
     <hr class="horizontal-line-2" />
 </div>
-
+<!-- Person logo underneath the slides -->
 <div class="centerWrap">
     <img class="PersonLogo" src="Data/Person.png" alt="Person" />
 </div>
 
-<hr class="horizontal-line-1 hrTestimonials" />
+<hr class="horizontal-line-1 hrTestimonials" id="about" />
 
+<!-- Principles Section: Core values of the company -->
+
+<!-- Principles Details: Sustainability, Innovation, and Customer Satisfaction -->
 <div class="centerWrapFull">
-    <div class="businessPrinciples">
-        <div class="principlesContainer">
-            <div class="centerWrap">
-                <div class="principlesWrapper ">
-                    <img class="principlesLogos" src="Data/Sustainable.png" alt="logo" />
+    <div class="row" style="width: 80%;">
+        <!-- Sustainability -->
+        <div class="col-md-4">
+            <div class="principlesContainer">
+                <div class="centerWrap">
+                    <div class="principlesWrapper ">
+                        <img class="principlesLogos" src="Data/Sustainable.png" alt="logo" />
+                    </div>
+                </div>
+                <div class="centerWrap">
+                    <h2 class="principlesHeading">Sustainability</h2>
+                </div>
+                <div class="centerWrap">
+                    <p class="principlesBody">We are dedicated to providing eco-friendly energy solutions that contribute to a greener planet.</p>
                 </div>
             </div>
-
-            <div class="centerWrap">
-                <h2 class="principlesHeading">Sustainability</h2>
-            </div>
-
-            <div class="centerWrap">
-                <p class="principlesBody">We are dedicated to providing eco-friendly energy solutions that contribute to a greener planet.</p>
-            </div>
-
         </div>
 
-        <div class="principlesContainer">
-            <div class="centerWrap">
-                <div class="principlesWrapper">
-                    <img class="principlesLogos" src="Data/Innovation.png" alt="logo" />
+        <!-- Innovation -->
+        <div class="col-md-4">
+            <div class="principlesContainer">
+                <div class="centerWrap">
+                    <div class="principlesWrapper">
+                        <img class="principlesLogos" src="Data/Innovation.png" alt="logo" />
+                    </div>
+                </div>
+                <div class="centerWrap">
+                    <h2 class="principlesHeading">Innovation</h2>
+                </div>
+                <div class="centerWrap">
+                    <p class="principlesBody">We embrace cutting-edge technology to deliver state-of-the-art solar products and services.</p>
                 </div>
             </div>
-
-            <div class="centerWrap">
-                <h2 class="principlesHeading">Innovation</h2>
-            </div>
-
-            <div class="centerWrap">
-                <p class="principlesBody">We embrace cutting-edge technology to deliver state-of-the-art solar products and services.</p>
-            </div>
-
         </div>
 
-        <div class="principlesContainer">
-            <div class="centerWrap">
-                <div class="principlesWrapper">
-                    <img class="principlesLogos" src="Data/Star.png" alt="logo" />
+        <!-- Customer Satisfaction -->
+        <div class="col-md-4">
+            <div class="principlesContainer">
+                <div class="centerWrap">
+                    <div class="principlesWrapper">
+                        <img class="principlesLogos" src="Data/Star.png" alt="logo" />
+                    </div>
                 </div>
-            </div>
-
-            <div class="centerWrap">
-                <h2 class="principlesHeading">Customer Satisfaction</h2>
-            </div>
-
-            <div class="centerWrap">
-                <p class="principlesBody">We prioritize our customers’ needs, ensuring they receive the best possible service and support.</p>
+                <div class="centerWrap">
+                    <h2 class="principlesHeading">Customer Satisfaction</h2>
+                </div>
+                <div class="centerWrap">
+                    <p class="principlesBody">We prioritize our customers’ needs, ensuring they receive the best possible service and support.</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="AboutSection">
-    <div class="AboutSectionWrapper">
-        <h2 class="aboutHeading">Company History</h2>
-        <p class="aboutMainInfo">Space IQ was founded with a passion for renewable energy. As a small, dedicated company, we focus on providing high-quality solar solutions and personalized service to residential and industrial clients. Our commitment to reliability and innovation has earned us a growing base of loyal customers.</p>
-
-        <h2 class="aboutSubHeading">Vision</h2>
-        <p class="aboutSubInfo">Space IQ aims to lead the solar industry by incorporating the latest technology and maintaining strong customer relationships through continuous improvement and training.</p>
-
-    </div>
-
-    <div class="picWrapper">
-        <img class="AboutPic" src="Data/AboutPic.jpg" />
+<!-- About Section: Company history and vision -->
+<div class="AboutSection centerWrap">
+    <div class="row" style="width: 100%;">
+        <!-- Company History and Vision -->
+        <div class="col-md-6 centerWrap">
+            <div class="AboutSectionWrapper">
+                <h2 class="aboutHeading">Company History</h2>
+                <p class="aboutMainInfo">
+                    Space IQ was founded with a passion for renewable energy. As a small, dedicated company, we focus on providing high-quality solar solutions and personalized service to residential and industrial clients. Our commitment to reliability and innovation has earned us a growing base of loyal customers.
+                </p>
+                <h2 class="aboutSubHeading">Vision</h2>
+                <p class="aboutSubInfo">
+                    Space IQ aims to lead the solar industry by incorporating the latest technology and maintaining strong customer relationships through continuous improvement and training.
+                </p>
+            </div>
+        </div>
+        <!-- Company Image -->
+        <div class="col-md-6 centerWrap">
+            <div class="picWrapper">
+                <img class="AboutPic" src="Data/AboutPic.jpg" />
+            </div>
+        </div>
     </div>
 </div>
 
-<hr class="horizontal-line-1" />
+<hr class="horizontal-line-1" id="news" />
 
+<!-- Latest News Section: Display recent news articles -->
 <div class="centerWrapFull">
     <h2 class="newsSectionHeader">Latest News</h2>
 </div>
@@ -219,30 +261,37 @@
     }
     else
     {
-        @foreach (var item in feedItems)
-        {
-            <div class="newsContainer">
-                <div class="centerWrap">
-                    <h2 class="newsHeader">@item.Title</h2>
+        <div class="row centerWrap" style="width: 80%;">
+            @foreach (var item in feedItems)
+            {
+                <div class="col-md-4 centerWrap">
+                    <div class="newsContainer">
+                        <div class="centerWrap">
+                            <h2 class="newsHeader">@item.Title</h2>
+                        </div>
+                        <div class="centerWrap">
+                            <p class="newsDescription">@((MarkupString)item.Description)</p>
+                        </div>
+                        <div class="centerWrap">
+                            <a href="@item.Link" class="newsButton">View</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="centerWrap">
-                    <p class="newsDescription">@((MarkupString)item.Description)</p>
-                </div>
-                <div class="centerWrap">
-                    <a href="@item.Link" class="newsButton">View</a>
-                </div>
-            </div>
-        }
+            }
+        </div>
     }
 </div>
 
+<!-- JavaScript for slide navigation -->
 <script>
     let slideIndex = 1;
 
+    // Function to navigate slides
     function changeSlides(n) {
         showSlides(slideIndex += n);
     }
 
+    // Function to show the current slide
     function showSlides(n) {
         let i;
         let slides = document.getElementsByClassName("mySlides");
@@ -255,14 +304,28 @@
 
         slides[slideIndex - 1].style.display = "block";
     }
+
+    // Function to scroll to sections
+    function BlazorScrollToId(id) {
+        const element = document.getElementById(id);
+        if (element instanceof HTMLElement) {
+            element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest"
+            });
+        }
+    }
 </script>
 
 @code {
     private bool ShowSuccessMessage = false;
     private Timer _timer;
 
+    // Method to add an item to the cart and show a success message
     private void AddToCart(string itemName, decimal price)
     {
+        // Add item to cart
         CartService.AddToCart(itemName, price, 1);
 
         // Show success message
@@ -272,6 +335,7 @@
         _timer = new Timer(HideMessage, null, 3000, Timeout.Infinite);
     }
 
+    // Method to hide the success message
     private void HideMessage(object state)
     {
         InvokeAsync(() =>
